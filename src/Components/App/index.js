@@ -1,16 +1,20 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Switch, Route} from 'react-router-dom'
 
 import NavBar from '../NavBar'
+import Home from '../Home'
 
 
 
 const App =()=>{
+  const [state,setState] = useState(false)
 
   return(
     <div>
-      <NavBar/>
-      <h1>This is working </h1>
+      <NavBar state={state} setState={setState}/>
+      <Switch>
+        <Route exact to="/" render={(props)=>(<Home {...props} state={state} setState={setState}/>)} />
+      </Switch>
     </div>
   )
 }
