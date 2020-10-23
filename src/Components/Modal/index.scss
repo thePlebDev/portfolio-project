@@ -1,0 +1,30 @@
+.modal-container{
+  position:absolute;
+  height:20%;
+  width:20%;
+  top:0;
+  rigth:0;
+  opacity:0.8;
+  background-color:#0f141e;
+}
+
+.transition-enter{
+opacity: 0;
+}
+.transition-enter-active{
+  opacity: .5;
+  transition: opacity 300ms ease-in;
+}
+.transition-enter-done{
+  opacity: 1;
+}
+.transition-exit{
+  opacity: 1;
+}
+.transition-exit-active{
+  opacity: .5;
+  transition: opacity 300ms ease-in;
+}
+.transition-exit-done{
+  opacity: 0;
+}
