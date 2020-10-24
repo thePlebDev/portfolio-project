@@ -7,11 +7,11 @@ const BurgerLine1 = styled.div`
   height:3px;
   margin:4px 0;
 
-  transition:background-color 2.5s, transform 0.4s;
+  transition:background-color 1.7s, transform 0.4s;
   transform:${props=>props.state ? 'rotate(-43deg) translate(-5px,6px)' :''};
 `
 const BurgerLine2 = styled.div`
-  transition:background-color 2.5s, transform 0.4s;
+  transition:background-color 1.7s, transform 0.4s;
   background-color:${props=>props.state ? 'white':'#0f141e'};
   width: 22px;
   height:3px;

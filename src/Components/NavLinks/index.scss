@@ -1,0 +1,22 @@
+.links{
+  width: 80%;
+  margin:20% auto;
+  text-align: center;
+}
+.text{
+  padding:5px;
+  color:white;
+  font-size: 50px;
+}
+.intro-enter{
+  background-color: red;
+}
+
+.intro-enter-active{
+  background-color: red;
+  transition: all 1s;
+}
+.intro-enter-done{
+  background-color: red;
+  transition: all 1s;
+}

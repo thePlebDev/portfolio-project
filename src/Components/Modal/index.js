@@ -1,5 +1,7 @@
 import React from 'react';
-import {CSSTransition} from "react-transition-group";
+import {CSSTransition,TransitionGroup} from "react-transition-group";
+
+import NavLinks from '../NavLinks'
 import './index.scss';
 
 
@@ -7,8 +9,10 @@ import './index.scss';
 
 const Modal =({state})=>{
   return(
+
       <CSSTransition timeout={300} in={state} classNames="transition" unmountOnExit>
-          <div className="modal-container">
+          <div className="container">
+            <NavLinks state={state}/>
           </div>
       </CSSTransition>
   )
