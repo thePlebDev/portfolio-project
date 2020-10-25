@@ -1,5 +1,10 @@
-import React from 'react';
-import styled from 'styled-components'
+import React,{useState} from 'react';
+import styled from 'styled-components';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import LanguageIcon from '@material-ui/icons/Language';
+
+import AboutCard from '../AboutCard';
 
 const Image = styled.img`
   width:75%;
@@ -23,22 +28,26 @@ font-size:.875rem;
 letter-spacing:0.4em;
 text-transform:uppercase;
 font-weight:400;
-border-bottom: 1px solid #878a8f;
+
 text-align:center;
 cursor:pointer;
+display:flex;
+justify-content:center;
+align-items:center;
 
 `
 
 const Card =({img,data})=>{
+  const [show,setShow] = useState(false)
   return(
     <Container>
       <div style={{display:'flex',justifyContent:'space-around'}}>
-        <Title>About</Title>
-        <Title>code</Title>
-        <Title>live site</Title>
-
+        <Title onClick={()=>setShow(!show)}> <HelpOutlineIcon/>Tech Specs</Title>
+        <Title><GitHubIcon/>code</Title>
+        <Title><LanguageIcon/>live site</Title>
       </div>
       <Image src={require("../../Assets/pupFinderPortFolio.png")} alt="project" />
+      <AboutCard state={show}/>
     </Container>
   )
 }
