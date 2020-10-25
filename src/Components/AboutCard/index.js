@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import TechSpecs from '../TechSpecs';
+
 const Container = styled.div`
 display:flex;
 justify-content:center;
@@ -16,34 +18,17 @@ transition:all .3s;
 opacity:0.9;
 `
 
-const Words = styled.div`
-  padding:3px;
-  opacity:${props=>props.state?1:0};
-  &:before{
-    content:'-';
-    color:red;
-
-  };
-`
 
 
 
-const AboutCard =({state})=>{
+const AboutCard =({state,data})=>{
   return(
     <Container state={state}>
-        <div>
-          <Words state={state}> Mongo</Words>
-          <Words state={state}> Express</Words>
-        </div>
-        <div>
-          <Words state={state}> React</Words>
-          <Words state={state}> Node</Words>
-        </div>
-        <div>
-          <Words state={state}> AWS</Words><div>
-            <Words state={state}> Ubuntu </Words>
-          </div>
-        </div>
+      {
+        data.map((item,index)=>{
+          return <TechSpecs  state={state} key={index} tech1={item.tech1} tech2={item.tech2}/>
+      })
+    }
 
     </Container>
   )

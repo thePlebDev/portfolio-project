@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import LanguageIcon from '@material-ui/icons/Language';
-
 import AboutCard from '../AboutCard';
+
+import {card1} from '../TechSpecsData'
 
 const Image = styled.img`
   width:75%;
@@ -47,7 +48,7 @@ const Card =({img,data})=>{
         <Title><LanguageIcon/>live site</Title>
       </div>
       <Image src={require("../../Assets/pupFinderPortFolio.png")} alt="project" />
-      <AboutCard state={show}/>
+      <AboutCard state={show} data={card1}/>
     </Container>
   )
 }
