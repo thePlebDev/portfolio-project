@@ -9,7 +9,8 @@ const GlobalStyle = createGlobalStyle`
   body{
     margin:0;
     padding:0;
-    font-family:Helvetica 
+    font-family:Helvetica;
+    overflowX:hidden;
   }
 `
 

@@ -1,12 +1,18 @@
 import React from 'react';
-import ShowModal from '../ShowModal';
+import styled from 'styled-components'
+
+import Modal from '../Modal';
+import Landing from '../Landing';
+import Showcase from '../Showcase';
+
+
+
 
 const Home =({state,setState})=>{
-
   return(
     <div>
-      <h1>This is the home page</h1>
-        <ShowModal state={state} />
+        <Showcase/>
+        <Modal state={state} />
     </div>
   )
 }

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import './index.scss'
 
 const Links = styled.div`
-  width: 100%;
+  width: 70%;
   margin:20% auto;
   position:relative;
 
