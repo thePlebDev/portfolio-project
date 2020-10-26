@@ -10,7 +10,14 @@ const GlobalStyle = createGlobalStyle`
     margin:0;
     padding:0;
     font-family:Helvetica;
-    overflowX:hidden;
+    overflow-x:hidden;
+  }
+  html{
+    overflow-x:hidden;
+  }
+  a{
+    text-decoration:none;
+    color:black;
   }
 `
 

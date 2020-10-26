@@ -2,16 +2,7 @@ import React from 'react';
 import Card from '../Card'
 import styled from 'styled-components'
 
-const data =[
-  {
-    img:'IMAGE HERE',
-    about:'this site was made with basic stuff'
-  },
-  {
-    img:'IMAGE HERE',
-    about:'this was made with a lot more stuff'
-  }
-]
+import LandingPage from '../LandingPage'
 
 const Container = styled.div`
 
@@ -41,10 +32,10 @@ const Showcase =()=>{
 
   return(
     <div>
+      <LandingPage/>
       <Text> showcase Projects</Text>
     <Container >
      <Card />
-
     </Container>
     </div>
   )

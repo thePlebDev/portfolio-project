@@ -15,8 +15,8 @@ const TechSpecs =({state,tech1,tech2})=>{
 
   return(
     <div>
-      <Words state={state}>{tech1}</Words>
-      <Words state={state}>{tech2}</Words>
+      <Words state={state}> {tech1}</Words>
+      <Words state={state}> {tech2}</Words>
     </div>
   )
 }

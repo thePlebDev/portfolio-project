@@ -12,6 +12,7 @@ const Home =({state,setState})=>{
   return(
     <div>
         <Showcase/>
+
         <Modal state={state} />
     </div>
   )

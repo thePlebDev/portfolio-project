@@ -44,7 +44,12 @@ const Card =({img,data})=>{
     <Container>
       <div style={{display:'flex',justifyContent:'space-around'}}>
         <Title onClick={()=>setShow(!show)}> <HelpOutlineIcon/>Tech Specs</Title>
-        <Title><GitHubIcon/>code</Title>
+        <a href="https://github.com/thePlebDev/portfolio-project" target="_blank" rel="noopener noreferrer">
+          <Title>
+              <GitHubIcon/>
+              code
+          </Title>
+        </a>
         <Title><LanguageIcon/>live site</Title>
       </div>
       <Image src={require("../../Assets/pupFinderPortFolio.png")} alt="project" />

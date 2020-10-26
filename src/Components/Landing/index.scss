@@ -1,0 +1,27 @@
+#rightBar{
+  animation: wheel 1s alternate 1s infinite linear;
+
+
+}
+#leftBar{
+  animation: wheel2 1s alternate 1s infinite linear;
+}
+
+@keyframes wheel{
+  from{
+    transform:translateX(0px);
+  }
+
+  to{
+    transform:translateX(15px);
+  }
+};
+@keyframes wheel2{
+  from{
+    transform:translateX(0px);
+  }
+
+  to{
+    transform:translateX(-15px);
+  }
+};
