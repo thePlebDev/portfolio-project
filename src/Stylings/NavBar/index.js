@@ -45,6 +45,7 @@ const Text = styled.div`
 const MovingText = styled(Text)`
   color:#0f141e;
   opacity:${props=>props.state?'1':'0'};
+  margin-top:20px;
 
 
 

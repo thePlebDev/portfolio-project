@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components'
+
 
 import Modal from '../Modal';
-import Landing from '../Landing';
+import ContactForm from '../ContactForm';
 import Showcase from '../Showcase';
 
 
@@ -12,7 +12,7 @@ const Home =({state,setState})=>{
   return(
     <div>
         <Showcase/>
-
+        <ContactForm/>
         <Modal state={state} />
     </div>
   )

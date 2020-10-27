@@ -20,7 +20,7 @@ const NavBar =({state,setState})=>{
   return(
     <div style={{display:'flex',justifyContent:'space-between',position:'relative'}}>
         <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginLeft:'12%'}}>
-            <MovingText state={show}> Elliott Software Development</MovingText>
+            <MovingText state={show}> Elliott Development</MovingText>
         </div>
         <Hamburger state={state} setState={setState}/>
     </div>
