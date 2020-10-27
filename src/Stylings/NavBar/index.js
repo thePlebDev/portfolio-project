@@ -32,15 +32,39 @@ const Container = styled.div`
 
 `
 const Text = styled.div`
-  color:${props=>props.state ? 'white':'#0f141e'};
-  transition:all 2.5s;
+  color:${props=>props.state?'white':'#0f141e'};
+  transition:all 2s;
   z-index:1;
   align-self:center;
   margin-right:25px;
   text-transform:uppercase;
   letter-spacing:0.2em;
   font-weight:700;
+
 `
+const MovingText = styled(Text)`
+  color:#0f141e;
+  opacity:${props=>props.state?'1':'0'};
+
+
+
+  @keyframes slide {
+    0%{
+      transform:translateX(-1000px)  ;
+      opacity:0;
+    }
+    70% {
+    opacity:.5 ;
+  }
+    100%{
+      opacity:1;
+      transform:translateX(0px) ;
+    }
+  }
+`
+
+
+
 const BurgerContainer = styled.div`
 
   margin-right:10px;
@@ -51,4 +75,4 @@ const BurgerContainer = styled.div`
 
 `
 
-export {BurgerLine1,BurgerLine2,BurgerLine3,Container,Text,BurgerContainer}
+export {BurgerLine1,BurgerLine2,BurgerLine3,Container,Text,BurgerContainer,MovingText}

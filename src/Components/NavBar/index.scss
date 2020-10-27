@@ -1,0 +1,12 @@
+.loading-enter{
+  opacity: 0;
+
+}
+
+.loading-enter-active{
+  opacity: 1;
+  transition: opacity 5s
+}
+.loading-enter-done{
+  opacity: 1;
+}
