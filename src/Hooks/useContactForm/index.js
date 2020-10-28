@@ -2,14 +2,13 @@ import React,{useState} from 'react';
 
 
 const useContactForm = ()=>{
-  const [state,setState] =useState({header:'',subject:''})
+  const [state,setState] =useState({name:'',subject:''})
   const [errors,setErrors] = useState({})
 
   const handleChange =(e)=>{
     let {value,name} = e.target
     setState({...state,[name]:value})
-    console.log(value)
-    console.log(name)
+    console.log(state)
   }
 
   const handleSubmit =(e)=>{
