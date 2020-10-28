@@ -10,7 +10,7 @@ const Input = styled.input`
   font-size:20px;
   border-bottom: 1px solid #0f141e;
   outline:none;
-
+  
 
 
   @media only screen and (min-width: 1200px){

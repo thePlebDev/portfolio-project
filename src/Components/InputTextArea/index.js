@@ -1,11 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const TextArea = styled.textarea`
+  width:70%;
+  height:70px;
+  margin-top:2rem;
+  padding:5px;
+  font-size:20px;
+  @media only screen and (min-width: 1200px){
+    width:53%;
+  };
+`
 
 
 const InputTextArea =({name,error,value,onChange})=>{
   return(
     <div>
       <label for={name}></label>
-      <textArea name={name} id={name} value={value} onChange={(e)=>onChange(e)}></textArea>
+      <TextArea name={name} id={name} value={value} onChange={(e)=>onChange(e)}placeholder="Message"></TextArea>
     </div>
   )
 }
