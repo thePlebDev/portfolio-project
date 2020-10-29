@@ -6,6 +6,8 @@ const Button = styled.button`
   border-radius:4px;
   border:1px solid #0f141e;
   background-color:white;
+  margin-top:10px;
+  cursor:pointer;
 `
 
 const SubmitButton =()=>{

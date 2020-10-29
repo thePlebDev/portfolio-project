@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const BurgerLine1 = styled.div`
 
-  background-color:${props=>props.state ? 'white':'#0f141e'};
+  background-color:#0f141e;
   width: 22px;
   height:3px;
   margin:4px 0;
@@ -12,7 +12,7 @@ const BurgerLine1 = styled.div`
 `
 const BurgerLine2 = styled.div`
   transition:background-color 1.7s, transform 0.4s;
-  background-color:${props=>props.state ? 'white':'#0f141e'};
+  background-color:#0f141e;
   width: 22px;
   height:3px;
   margin:4px 0;
@@ -29,10 +29,11 @@ const Container = styled.div`
   margin-top:15px;
   position:relative;
   margin-right:5%;
+  position:relative;
 
 `
 const Text = styled.div`
-  color:${props=>props.state?'white':'#0f141e'};
+  color:#0f141e;
   transition:all 2s;
   z-index:1;
   align-self:center;
@@ -47,32 +48,17 @@ const MovingText = styled(Text)`
   opacity:${props=>props.state?'1':'0'};
   margin-top:20px;
 
-
-
-  @keyframes slide {
-    0%{
-      transform:translateX(-1000px)  ;
-      opacity:0;
-    }
-    70% {
-    opacity:.5 ;
-  }
-    100%{
-      opacity:1;
-      transform:translateX(0px) ;
-    }
-  }
 `
 
 
 
 const BurgerContainer = styled.div`
-
   margin-right:10px;
   align-self:center;
   position:absolute;
   right:0;
   z-index:1;
+  cursor:pointer;
 
 `
 

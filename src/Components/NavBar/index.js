@@ -18,8 +18,8 @@ const NavBar =({state,setState})=>{
   const {show} = useLoading()
 
   return(
-    <div style={{display:'flex',justifyContent:'space-between',position:'relative'}}>
-        <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginLeft:'12%'}}>
+    <div style={{display:'flex',justifyContent:'space-between',backgroundColor:'red',opacity:'0.9',width:'100%',position:'fixed',zIndex:9}}>
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginLeft:'12%',position:'relative'}}>
             <MovingText state={show}> Elliott Development</MovingText>
         </div>
         <Hamburger state={state} setState={setState}/>

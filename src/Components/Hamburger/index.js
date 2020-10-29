@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import {BurgerLine1,BurgerLine2,BurgerLine3,Text,Container,BurgerContainer} from '../../Stylings/NavBar'
 
-
 //since it is just the click function.
 //I am going to leave it in the component
 

@@ -37,9 +37,6 @@ const NavLinks =({state})=>{
   const [showBar2,setShowBar2] =useState(false)
   const [showBar3,setShowBar3] =useState(false)
 
-  const handleHoverIn =()=>{
-    setShow(true)
-  }
 
   return(
       <Links state={state}>
