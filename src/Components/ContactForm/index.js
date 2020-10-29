@@ -9,6 +9,8 @@ import InputTextArea from '../InputTextArea';
 import SubmitButton from '../SubmitButton';
 import useContactForm from '../../Hooks/useContactForm';
 
+import validation from '../../utils/Validation'
+
 
 const Contact = styled.h5`
   font-size: .875rem;
@@ -41,7 +43,7 @@ const Icon = styled.div`
 
 
 const ContactForm =()=>{
-  const {state,errors,handleChange,handleSubmit} = useContactForm()
+  const {state,errors,handleChange,handleSubmit} = useContactForm(validation.contactForm)
   return(
     <Form onSubmit={handleSubmit}>
       <div style={{display:'flex'}}>
@@ -58,8 +60,8 @@ const ContactForm =()=>{
           </a>
       </div>
       <Title>Get in touch - let's work together</Title>
-      <InputText name='name' error={errors.header} value={state.header} onChange={handleChange} />
-      <InputText name='email' error={errors.header} value={state.header} onChange={handleChange} />
+      <InputText type={'text'} name='name' error={errors.name} value={state.name} onChange={handleChange} />
+      <InputText type={'email'} name='email' error={errors.email} value={state.email} onChange={handleChange} />
       <InputTextArea name='subject' error={errors.subject}  value={state.subject} onChange={handleChange} />
       <SubmitButton />
     </Form>

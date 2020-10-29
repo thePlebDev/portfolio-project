@@ -1,18 +1,28 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 
 
-const useContactForm = ()=>{
-  const [state,setState] =useState({name:'',subject:''})
-  const [errors,setErrors] = useState({})
+const useContactForm = (validation)=>{
+  const [state,setState] =useState({name:'',subject:'',email:''})
+  const [errors,setErrors] = useState({error:'me'})
+  const [isSubmitting,setIsSubmitting] = useState(false)
 
   const handleChange =(e)=>{
     let {value,name} = e.target
     setState({...state,[name]:value})
-    console.log(state)
   }
 
+  useEffect(()=>{
+    if(isSubmitting && Object.keys(errors).length ===0){
+      console.log('THE API HAS BEEN SENT')
+      setIsSubmitting(false)
+    }
+  },[errors,isSubmitting])
+
+
   const handleSubmit =(e)=>{
-    console.log('ya boy got submitted');
+    setIsSubmitting(true)
+    setErrors(validation(state))
+    console.log(errors)
     e.preventDefault()
 
   }
