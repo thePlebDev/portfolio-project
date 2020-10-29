@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import './index.scss';
 
 const Svg = styled.svg`
-  width:600px;
-  height:300px;
+  width:500px;
+  height:400px;
   display:block;
   margin:0 auto;
 
@@ -17,7 +17,7 @@ const Svg = styled.svg`
 
 const Landing =()=>{
   return(
-    <div >
+    <div  >
     <Svg  viewBox="0 0 1127 855" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g id="portfolioAnimattion">
     <path id="Vector" d="M565.194 787C844.65 787 1071.19 773.121 1071.19 756C1071.19 738.879 844.65 725 565.194 725C285.737 725 59.1935 738.879 59.1935 756C59.1935 773.121 285.737 787 565.194 787Z" fill="#3F3D56"/>

@@ -1,16 +1,15 @@
-import React from 'react';
+import React,{useRef,useLayoutEffect,useState} from 'react';
 import Card from '../Card'
 import styled from 'styled-components'
 
 import LandingPage from '../LandingPage'
 
 const Container = styled.div`
-
 width:100%;
-height:100vh;
 margin:10px auto;
 position:relative;
 `
+
 const Text = styled.h5`
 margin:10px auto;
   color:#878a8f;
@@ -29,14 +28,35 @@ margin:10px auto;
 
 
 const Showcase =()=>{
+  const ref = useRef(null)
+  const [show,setShow] = useState(false)
+
+  useLayoutEffect(()=>{
+    const topPosition = ref.current.getBoundingClientRect().top// the position of our element from the top
+    const onScroll =()=>{
+        //where we are scrolled to plus the height of the window
+      const scrollPosition = window.scrollY + window.innerHeight;
+      if(topPosition<scrollPosition){
+        // if the top of the element is on the screen. Run the animations
+          setShow(true)
+          console.log('it is true')
+      }
+
+    }
+    window.addEventListener("scroll",onScroll);
+    return()=> window.removeEventListener("scroll",onScroll)
+
+  })
 
   return(
     <div>
       <LandingPage/>
       <Text> showcase Projects</Text>
-    <Container >
-     <Card />
-    </Container>
+      <Container >
+          <div ref={ref} >
+              <Card state={show} />
+          </div>
+      </Container>
     </div>
   )
 }

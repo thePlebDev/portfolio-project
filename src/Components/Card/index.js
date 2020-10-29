@@ -19,6 +19,9 @@ const Image = styled.img`
 `
 const Container = styled.div`
   text-align:center;
+  transition:transform 1s;
+  transform:${props=>props.state ? 'translateX(0)':'translateX(-1000px)'};
+  transition: transform 1s;
 
   position:relative;
 
@@ -38,10 +41,10 @@ align-items:center;
 
 `
 
-const Card =({img,data})=>{
+const Card =({img,data,state})=>{
   const [show,setShow] = useState(false)
   return(
-    <Container>
+    <Container state={state}>
       <div style={{display:'flex',justifyContent:'space-around'}}>
         <Title onClick={()=>setShow(!show)}> <HelpOutlineIcon/>Tech Specs</Title>
         <a href="https://github.com/thePlebDev/portfolio-project" target="_blank" rel="noopener noreferrer">
