@@ -1,10 +1,17 @@
 import React from 'react';
+import styled from 'styled-components'
 
+const Button = styled.button`
+  padding:4px 36px;
+  border-radius:4px;
+  border:1px solid #0f141e;
+  background-color:white;
+`
 
 const SubmitButton =()=>{
 
   return(
-    <button type='submit'>SUBMIT</button>
+    <Button type='submit'>SEND</Button>
   )
 }
 

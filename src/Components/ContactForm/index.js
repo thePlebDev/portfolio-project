@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import TwitterIcon from '@material-ui/icons/Twitter';
 
 import Form from '../Form'
 import InputText from '../InputText';
@@ -26,12 +28,35 @@ const Title = styled.div`
   letter-spacing: -.01em;
   color: #0f141e;
 `
+const Icon = styled.div`
+  align-self:center;
+  margin-left:10px;
+  color: #878a8f;
+  cursor:pointer;
+  transition:all .3s;
+  &:hover{
+    color:#0f141e;
+  }
+`
+
 
 const ContactForm =()=>{
   const {state,errors,handleChange,handleSubmit} = useContactForm()
   return(
     <Form onSubmit={handleSubmit}>
-      <Contact>Contact form </Contact>
+      <div style={{display:'flex'}}>
+          <Contact>Contact </Contact>
+          <a href="https://github.com/thePlebDev" target="_blank" rel="noopener noreferrer" style={{alignSelf:'center'}}>
+            <Icon>
+              <GitHubIcon/>
+            </Icon>
+          </a>
+          <a href="https://twitter.com/Tristanthewebd1" target="_blank" rel="noopener noreferrer" style={{alignSelf:'center'}}>
+          <Icon>
+            <TwitterIcon style={{alignSelf:'center',marginLeft:'10px'}}/>
+          </Icon>
+          </a>
+      </div>
       <Title>Get in touch - let's work together</Title>
       <InputText name='name' error={errors.header} value={state.header} onChange={handleChange} />
       <InputText name='email' error={errors.header} value={state.header} onChange={handleChange} />

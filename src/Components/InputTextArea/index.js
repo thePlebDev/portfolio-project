@@ -17,7 +17,7 @@ const InputTextArea =({name,error,value,onChange})=>{
   return(
     <div>
       <label for={name}></label>
-      <TextArea name={name} id={name} value={value} onChange={(e)=>onChange(e)}placeholder="Message"></TextArea>
+      <TextArea name={name} id={name} value={value} onChange={(e)=>onChange(e)}placeholder="MESSAGE"></TextArea>
     </div>
   )
 }
