@@ -45,7 +45,7 @@ const Card =({img,data,state})=>{
   const [show,setShow] = useState(false)
   return(
     <Container state={state}>
-      <div style={{display:'flex',justifyContent:'space-around'}}>
+      <div style={{display:'flex',justifyContent:'space-around'}} id="projects">
         <Title onClick={()=>setShow(!show)}> <HelpOutlineIcon/>Tech Specs</Title>
         <a href="https://github.com/thePlebDev/portfolio-project" target="_blank" rel="noopener noreferrer">
           <Title>

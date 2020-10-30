@@ -32,22 +32,29 @@ transition:all .2s;
 `
 
 
+
 const NavLinks =({state})=>{
   const [show,setShow] = useState(false)
   const [showBar2,setShowBar2] =useState(false)
   const [showBar3,setShowBar3] =useState(false)
 
-
   return(
       <Links state={state}>
-          <Text state={state} onMouseOver={()=>{setShow(true)}} onMouseLeave={()=>{setShow(false)}}>Home</Text>
-          <Bar state={show}></Bar>
 
-          <Text onMouseOver={()=>{setShowBar2(true)}} onMouseLeave={()=>{setShowBar2(false)}}>Projects</Text>
-          <Bar state={showBar2}></Bar>
+          <a href="#home">
+              <Text state={state} onMouseOver={()=>{setShow(true)}} onMouseLeave={()=>{setShow(false)}}>Home</Text>
+              <Bar state={show}></Bar>
+          </a>
 
-          <Text className="text" onMouseOver={()=>{setShowBar3(true)}} onMouseLeave={()=>{setShowBar3(false)}}>About</Text>
-          <Bar state={showBar3}></Bar>
+          <a href="#projects">
+            <Text onMouseOver={()=>{setShowBar2(true)}} onMouseLeave={()=>{setShowBar2(false)}}>Projects</Text>
+            <Bar state={showBar2}></Bar>
+          </a>
+
+          <a href="#contact">
+            <Text className="text" onMouseOver={()=>{setShowBar3(true)}} onMouseLeave={()=>{setShowBar3(false)}}>Contact</Text>
+            <Bar state={showBar3}></Bar>
+          </a>
       </Links>
   )
 }

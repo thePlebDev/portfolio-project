@@ -50,7 +50,9 @@ const Showcase =()=>{
 
   return(
     <div>
-      <LandingPage/>
+      <div id="home" >
+      <LandingPage />
+      </div>
       <Text> showcase Projects</Text>
       <Container >
           <div ref={ref} >
