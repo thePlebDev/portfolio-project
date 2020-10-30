@@ -5,6 +5,7 @@ const useContactForm = (validation)=>{
   const [state,setState] =useState({name:'',subject:'',email:''})
   const [errors,setErrors] = useState({error:'me'})
   const [isSubmitting,setIsSubmitting] = useState(false)
+  const [status,setStatus] = useState(false)
 
   const handleChange =(e)=>{
     let {value,name} = e.target
@@ -13,7 +14,7 @@ const useContactForm = (validation)=>{
 
   useEffect(()=>{
     if(isSubmitting && Object.keys(errors).length ===0){
-      console.log('THE API HAS BEEN SENT')
+      setStatus(true);
       setIsSubmitting(false)
     }
   },[errors,isSubmitting])
@@ -31,7 +32,9 @@ const useContactForm = (validation)=>{
     state,
     errors,
     handleChange,
-    handleSubmit
+    handleSubmit,
+    status,
+    setStatus
   }
 }
 

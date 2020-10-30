@@ -1,15 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import Landing from '../Landing';
 import useLoading from '../../Hooks/useLoadingAnimation';
-
 import {Or,H4,Title,About,Name} from '../../Stylings/LandingPage';
-
-
-
 const LandingPage =()=>{
   const {show} = useLoading()
-
 
   return(
     <div style={{height:'100vh'}}>

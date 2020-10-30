@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import TwitterIcon from '@material-ui/icons/Twitter';
 
+
 import Form from '../Form'
 import InputText from '../InputText';
 import InputTextArea from '../InputTextArea';
 import SubmitButton from '../SubmitButton';
+import EmailResponse from '../EmailResponse';
 import useContactForm from '../../Hooks/useContactForm';
 
 import validation from '../../utils/Validation'
@@ -43,9 +45,11 @@ const Icon = styled.div`
 
 
 const ContactForm =()=>{
-  const {state,errors,handleChange,handleSubmit} = useContactForm(validation.contactForm)
+  const {state,errors,handleChange,handleSubmit,status,setStatus} = useContactForm(validation.contactForm)
   return(
     <Form onSubmit={handleSubmit}>
+
+      <EmailResponse status={status} setStatus={setStatus}/>
       <div style={{display:'flex'}}>
           <Contact>Contact </Contact>
           <a href="https://github.com/thePlebDev" target="_blank" rel="noopener noreferrer" style={{alignSelf:'center'}}>
@@ -64,6 +68,7 @@ const ContactForm =()=>{
       <InputText type={'email'} name='email' error={errors.email} value={state.email} onChange={handleChange} />
       <InputTextArea name='subject' error={errors.subject}  value={state.subject} onChange={handleChange} />
       <SubmitButton />
+
     </Form>
   )
 }
