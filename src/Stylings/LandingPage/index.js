@@ -34,6 +34,7 @@ const H4 = styled.h4`
   color: #0f141e;
   transition:all 2s;
   opacity:${props=>props.state?'1':'0'};
+  cursor:pointer;
 `
 const Or = styled.span`
   font-style: normal;
