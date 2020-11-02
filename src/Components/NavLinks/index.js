@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import {Link, animateScroll as scroll} from "react-scroll";
 import styled from 'styled-components';
 
 import './index.scss'
@@ -38,23 +39,27 @@ const NavLinks =({state})=>{
   const [showBar2,setShowBar2] =useState(false)
   const [showBar3,setShowBar3] =useState(false)
 
+  const scrollToTop = ()=>{
+    scroll.scrollToTop();
+  }
+
   return(
       <Links state={state}>
 
-          <a href="#home">
+          <Link to="home" smooth={true} duration={500} offset={-70}>
               <Text state={state} onMouseOver={()=>{setShow(true)}} onMouseLeave={()=>{setShow(false)}}>Home</Text>
               <Bar state={show}></Bar>
-          </a>
+          </Link>
 
-          <a href="#projects">
+          <Link to="projects" smooth={true} duration={500} offset={-70}>
             <Text onMouseOver={()=>{setShowBar2(true)}} onMouseLeave={()=>{setShowBar2(false)}}>Projects</Text>
             <Bar state={showBar2}></Bar>
-          </a>
+          </Link>
 
-          <a href="#contact">
+          <Link to="contact" smooth={true} duration={500} offset={-70}>
             <Text className="text" onMouseOver={()=>{setShowBar3(true)}} onMouseLeave={()=>{setShowBar3(false)}}>Contact</Text>
             <Bar state={showBar3}></Bar>
-          </a>
+          </Link>
       </Links>
   )
 }
