@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import './index.scss';
 
 const Svg = styled.svg`
-  width:500px;
+  width:400px;
   height:400px;
   display:block;
   margin:0 auto;
