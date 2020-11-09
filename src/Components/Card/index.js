@@ -4,6 +4,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import LanguageIcon from '@material-ui/icons/Language';
 import AboutCard from '../AboutCard';
+import Demo from '../Demo'
 
 import {card1} from '../TechSpecsData'
 
@@ -42,6 +43,11 @@ align-items:center;
 
 const Card =({img,data,state})=>{
   const [show,setShow] = useState(false)
+  const [showVid,setShowVid] = useState(false)
+
+  const handleClick =()=>{
+    setShowVid(!showVid)
+  }
   return(
     <Container state={state}>
       <div style={{display:'flex',justifyContent:'space-around'}} id="projects">
@@ -52,8 +58,10 @@ const Card =({img,data,state})=>{
               code
           </Title>
         </a>
-        <Title><LanguageIcon/>live</Title>
+        <Title onClick={()=>handleClick()}><LanguageIcon/>demo</Title>
       </div>
+        
+      <Demo showVid={showVid} />
       <Image src={require("../../Assets/pupFinderPortFolio.png")} alt="project" />
       <AboutCard state={show} data={card1}/>
     </Container>

@@ -42,7 +42,7 @@ const Icon = styled.div`
     color:#0f141e;
   }
 `
-
+ 
 
 const ContactForm =()=>{
   const {state,errors,handleChange,handleSubmit,status,setStatus} = useContactForm(validation.contactForm)
