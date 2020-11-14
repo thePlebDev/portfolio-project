@@ -1,29 +1,58 @@
 import React,{useState,useEffect} from 'react';
 import styled from 'styled-components'
-import { CSSTransition } from 'react-transition-group'
 
-import Hamburger from '../Hamburger'
-import {MovingText} from '../../Stylings/NavBar';
-import './index.scss'
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import SearchIcon from '@material-ui/icons/Search';
 
 import useLoading from '../../Hooks/useLoadingAnimation'
 
-const Image = styled.img`
-width:100px;
-height:50px;
+const Container = styled.div`
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(0, 0, 0, 0.5);
+
+  @media only screen and (min-width: 1050px){
+    flex-direction:row;
+    justify-content:space-around;
+    padding-bottom:0px;
+
+  }
 `
+const Text = styled.div`
+  font-size:1.4rem;
+  color: rgba(0, 0, 0, 0.75);
+  text-transform: uppercase;
+  cursor:pointer;
+`
+const IconContainer = styled.div`
+  display:flex;
+  align-items:center;
+  justify-content:center;
+`
+
 
 
 const NavBar =({state,setState})=>{
   const {show} = useLoading()
 
   return(
-    <div style={{display:'flex',justifyContent:'space-between',backgroundColor:'red',opacity:'0.9',width:'100%',position:'fixed',zIndex:9}}>
-        <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginLeft:'12%',position:'relative'}}>
-            <MovingText state={show}> Elliott Development</MovingText>
-        </div>
-        <Hamburger state={state} setState={setState}/>
-    </div>
+    <Container>
+        <Text>
+            <h2>Tristan Elliott</h2>
+        </Text>
+        <IconContainer>
+            <YouTubeIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
+            <TwitterIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
+            <GitHubIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
+            <SearchIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
+        </IconContainer>
+    </Container>
   )
 }
 
