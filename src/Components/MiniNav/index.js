@@ -5,7 +5,7 @@ const Container = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-    font
+    margin-top:20px;
 `
 const Text = styled.span`
 padding:10px;
