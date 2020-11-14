@@ -16,10 +16,12 @@ const LandingPage =()=>{
         <Link to="projects" smooth={true} duration={500} offset={-70}>
           <H4 state={show} >View Projects</H4>
         </Link>
-        <Or state={show} style={{alignSelf:'center'}}>or</Or>
+        <Or state={show} style={{alignSelf:'center'}}>-</Or>
         <Link to="contact" smooth={true} duration={800} >
           <H4  state={show}>Contact</H4>
         </Link>
+        <Or state={show} style={{alignSelf:'center'}}>-</Or>
+        <H4  state={show}>Blog</H4>
       </div>
     </div>
   )

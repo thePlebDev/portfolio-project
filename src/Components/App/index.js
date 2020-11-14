@@ -3,6 +3,7 @@ import {Switch, Route} from 'react-router-dom'
 
 import NavBar from '../NavBar'
 import Home from '../Home'
+import BlogHome from '../BlogHome';
 
 
 
@@ -13,7 +14,8 @@ const App =()=>{
     <div>
       <NavBar state={state} setState={setState}/>
       <Switch>
-        <Route exact to="/" render={(props)=>(<Home {...props} state={state} setState={setState}/>)} />
+        <Route exact path="/" render={(props)=>(<Home {...props} state={state} setState={setState}/>)}  />
+        <Route  path="/blog" component={BlogHome} />
       </Switch>
     </div>
   )

@@ -38,6 +38,7 @@ const NavLinks =({state})=>{
   const [show,setShow] = useState(false)
   const [showBar2,setShowBar2] =useState(false)
   const [showBar3,setShowBar3] =useState(false)
+  const [showBar4,setShowBar4] =useState(false)
 
   const scrollToTop = ()=>{
     scroll.scrollToTop();
@@ -60,6 +61,9 @@ const NavLinks =({state})=>{
             <Text className="text" onMouseOver={()=>{setShowBar3(true)}} onMouseLeave={()=>{setShowBar3(false)}}>Contact</Text>
             <Bar state={showBar3}></Bar>
           </Link>
+
+          <Text className="text" onMouseOver={()=>{setShowBar4(true)}} onMouseLeave={()=>{setShowBar4(false)}}>Blog</Text>
+          <Bar state={showBar4}></Bar>
       </Links>
   )
 }
