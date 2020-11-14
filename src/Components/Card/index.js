@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useRef,useEffect} from 'react';
 import styled from 'styled-components';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
@@ -24,8 +24,8 @@ const Container = styled.div`
   transform:${props=>props.state ? 'translateX(0)':'translateX(-1000px)'};
   transition: transform 1s;
   position:relative;
-
 `
+
 const Title = styled.h2`
 color:#878a8f;
 font-size:.875rem;
@@ -44,10 +44,20 @@ align-items:center;
 const Card =({img,data,state})=>{
   const [show,setShow] = useState(false)
   const [showVid,setShowVid] = useState(false)
+  const node = useRef()
 
   const handleClick =()=>{
     setShowVid(!showVid)
   }
+
+  useEffect(()=>{
+    document.addEventListener('mouseDown',handleClick);
+
+    return()=>{
+      document.removeEventListener("mousedown",handleClick);
+    }
+  },[]);
+
   return(
     <Container state={state}>
       <div style={{display:'flex',justifyContent:'space-around'}} id="projects">
@@ -58,9 +68,9 @@ const Card =({img,data,state})=>{
               code
           </Title>
         </a>
-        <Title onClick={()=>handleClick()}><LanguageIcon/>demo</Title>
+        <Title onClick={()=>handleClick()} ref={node}><LanguageIcon/>demo</Title>
       </div>
-        
+
       <Demo showVid={showVid} />
       <Image src={require("../../Assets/pupFinderPortFolio.png")} alt="project" />
       <AboutCard state={show} data={card1}/>
