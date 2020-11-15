@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Filter from '../Filters'
+
 const Container = styled.div`
 text-align:center;
 margin-bottom:20px;
@@ -41,18 +43,12 @@ const FilterContainer =styled.div`
   justify-content:center;
 `
 
-const ArticleCard =({image,title,filters,description})=>{
+const ArticleCard =({image,title,filters,description,setBlogState,blogState})=>{
 
   return(
     <Container>
       <img  style={{height:'200px',width:'350px'}} src={image} alt='city' />
-      <FilterContainer>
-          {
-            filters.map((item,index)=>{
-              return<div key={index} style={{margin:'5px'}}>{item}</div>
-            })
-          }
-      </FilterContainer>
+      <Filter filters={filters} setBlogState={setBlogState} blogState={blogState}/>
       <Title>{title}</Title>
       <Description>{description}</Description>
       <ReadMore> Read more</ReadMore>

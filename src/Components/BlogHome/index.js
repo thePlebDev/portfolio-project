@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import styled from 'styled-components';
 
 import articleData from '../ArticleData';
@@ -36,13 +36,14 @@ const ArticleContainer = styled.div`
 
 
 const BlogHome =()=>{
+  const [blogState,setBlogState] = useState(articleData)
   return(
     <Container >
       <H1>Articles</H1>
       <ArticleContainer>
         {
-          articleData.map((item,index)=>{
-            return <ArticleCard key={index} image={item.image} filters={item.filters} title={item.title} description={item.description} />
+          blogState.map((item,index)=>{
+            return <ArticleCard setBlogState={setBlogState} blogState={blogState} key={index} image={item.image} filters={item.filters} title={item.title} description={item.description} />
           })
         }
       </ArticleContainer>
