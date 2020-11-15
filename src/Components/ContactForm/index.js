@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import email from '../../utils/EmailJS';
 
 
 import Form from '../Form'
@@ -42,12 +43,12 @@ const Icon = styled.div`
     color:#0f141e;
   }
 `
- 
+
 
 const ContactForm =()=>{
   const {state,errors,handleChange,handleSubmit,status,setStatus} = useContactForm(validation.contactForm)
   return(
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} email={email}>
 
       <EmailResponse status={status} setStatus={setStatus}/>
       <div id="contact" style={{display:'flex'}}>

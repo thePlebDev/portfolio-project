@@ -14,6 +14,16 @@ let utils = (function(){
           }
         return errors
     },
+    adminLogin(state){
+      let errors={}
+      if(!state.username){
+        errors.username="please enter a username"
+      }
+      if(!state.password){
+        errors.password="please enter a password"
+      }
+      return errors
+    }
   }
 }())
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import email from '../../utils/EmailJS';
 
 const Form = styled.form`
   width:75%;
@@ -12,12 +11,8 @@ const Form = styled.form`
 
 
 const FormComponent =({children,onSubmit})=>{
-  let submitItAll =(e)=>{
-    email(e);
-    onSubmit(e);
-  }
   return(
-    <Form onSubmit={(e)=>submitItAll(e)}>
+    <Form onSubmit={(e)=>onSubmit(e)}>
       {children}
     </Form>
   )
