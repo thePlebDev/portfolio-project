@@ -17,7 +17,6 @@ const useAdminForm =(validation)=>{
     console.log('submitted');
     setErrors(validation(state))
     setIsSubmitting(true);
-
   }
 
   useEffect(()=>{
@@ -29,6 +28,7 @@ const useAdminForm =(validation)=>{
 
   return{
     state,
+    errors,
     handleChange,
     handleSubmit
   }

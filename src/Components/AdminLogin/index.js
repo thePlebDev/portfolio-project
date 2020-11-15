@@ -1,34 +1,34 @@
 import React,{useState} from 'react';
 import styled from 'styled-components';
-import Form from '../Form';
+import LockIcon from '@material-ui/icons/Lock';
+
 
 import useAdminForm from '../../Hooks/useAdminForm';
 import validation from '../../utils/Validation';
+
+import Form from '../Form';
+import AdminPasswordInput from '../AdminPasswordInput'
+import AdminTextInput from '../AdminTextInput'
+import SubmitButton from '../SubmitButton'
 
 
 
 const Container = styled.div`
   width:80%;
-  border: 1px solid red;
   margin:0 auto;
+  text-align:center;
 `
 
 
 const AdminLogin =()=>{
-  const {state,handleChange,handleSubmit} = useAdminForm(validation.adminLogin)
+  const {state,handleChange,handleSubmit,errors} = useAdminForm(validation.adminLogin)
   return(
     <Container>
+      <LockIcon style={{fontSize:'80px'}}/>
       <Form onSubmit={handleSubmit}>
-        <label>
-          username
-          <input name="username" value={state.username} onChange={(e)=>handleChange(e)}/>
-        </label>
-
-        <label>
-        password
-          <input name="password" value={state.password} onChange={(e)=>handleChange(e)}/>
-        </label>
-        <button type='Submit'> Submit</button>
+        <AdminTextInput state={state.username} handleChange={handleChange}  error={errors.username}/>
+        <AdminPasswordInput state={state.password} handleChange={handleChange} error={errors.password}/>
+        <SubmitButton type='Submit'> Submit</SubmitButton>
       </Form>
     </Container>
   )
