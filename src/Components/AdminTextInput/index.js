@@ -11,12 +11,12 @@ const Input = styled.input`
   border:${props=>props.state ? '1px solid red':'1px solid black'};
 `
 
-const AdminTextInput = ({state,handleChange,error})=>{
+const AdminTextInput = ({state,handleChange,error,name})=>{
 
   return(
     <Container>
       <label for='username'>
-        <Input id='username' state={error} name="username" type="text" value={state} onChange={(e)=>handleChange(e)} placeholder='username'/>
+        <Input id='username' state={error} name={name} type="text" value={state} onChange={(e)=>handleChange(e)} placeholder={name}/>
       </label>
     </Container>
   )

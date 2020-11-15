@@ -27,6 +27,7 @@ const useBlogPost =(validation)=>{
 
   return{
     state,
+    errors,
     handleChange,
     handleSubmit
   }

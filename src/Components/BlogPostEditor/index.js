@@ -2,53 +2,32 @@ import React,{useState} from 'react';
 import styled from 'styled-components';
 
 import Form from '../Form'
+import AdminTextInput from '../AdminTextInput';
+import SubmitButton from '../SubmitButton'
+import TextArea from '../TextArea'
 
 import useBlogPost from '../../Hooks/useBlogPost'
 import validation from '../../utils/Validation'
 
 const Container = styled.div`
-  border:1px solid red;
+
   width:80%;
+  text-align:center;
   margin:0 auto;
 `
 
 const BlogPostEditor =()=>{
-  const {state,handleChange,handleSubmit} = useBlogPost(validation.blogPost)
+  const {state,errors,handleChange,handleSubmit} = useBlogPost(validation.blogPost)
 
   return(
     <Container>
         <Form onSubmit={handleSubmit}>
-          <div>
-            <label>
-              image link
-              <input name="imageLink" onChange={(e)=>handleChange(e)} value={state.imageLinke}/>
-            </label>
-          </div>
-          <div>
-            <label>
-              title
-              <input name="title" onChange={(e)=>handleChange(e)} value={state.title}/>
-            </label>
-          </div>
-          <div>
-            <label>
-              description
-              <input name="description" onChange={(e)=>handleChange(e)} value={state.description}/>
-            </label>
-          </div>
-          <div>
-            <label>
-              filters
-              <input name="filters" onChange={(e)=>handleChange(e)} value={state.filters}/>
-            </label>
-          </div>
-          <div>
-            <label>
-              body
-              <textarea name="body" onChange={(e)=>handleChange(e)} value={state.body}/>
-            </label>
-          </div>
-          <button>Click</button>
+          <AdminTextInput state={state.imageLink} name={'imageLink'} handleChange={handleChange} error={errors.imageLink} />
+          <AdminTextInput state={state.title} name={'title'} handleChange={handleChange} error={errors.title} />
+          <AdminTextInput state={state.description} name={'description'} handleChange={handleChange} error={errors.description} />
+          <AdminTextInput state={state.filters} name={'filters'} handleChange={handleChange} error={errors.filters} />
+          <TextArea value={state.body} handleChange={handleChange} name={'body'} />
+          <SubmitButton>Click</SubmitButton>
         </Form>
     </Container>
   )
