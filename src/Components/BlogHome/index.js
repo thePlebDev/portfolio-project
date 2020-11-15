@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import articleData from '../ArticleData';
+import ArticleCard from '../ArticleCard';
+
+
 const  Container= styled.div`
   position:relative;
 `
@@ -23,17 +27,25 @@ const H1 = styled.h1`
   }
 `
 
+const ArticleContainer = styled.div`
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    grid-gap:2rem;
+`
+
+
 
 const BlogHome =()=>{
   return(
     <Container >
       <H1>Articles</H1>
-      <div>
-          <h1>Articles</h1>
-          <h1>Articles</h1>
-          <h1>Articles</h1>
-          <h1>Articles</h1>
-      </div>
+      <ArticleContainer>
+        {
+          articleData.map((item,index)=>{
+            return <ArticleCard key={index} image={item.image} filters={item.filters} title={item.title} description={item.description} />
+          })
+        }
+      </ArticleContainer>
     </Container>
   )
 }
