@@ -9,7 +9,7 @@ const port = 3000
 const url = 'mongodb://127.0.0.1:27017/testBlog'
 const dbName = "testBlog"
 
-
+//--------local database setup ----------------------
 MongoClient.connect(url,{useNewUrlParser:true},(err,
 client)=>{
   if (err) return console.log(err)
@@ -26,6 +26,7 @@ db.once('open',_=>{
 db.on('error',err=>{
   console.error('connection error: ',err)
 })
+//--------------------------------------------------
 
 
 app.use("/v1",apiVersion1)
