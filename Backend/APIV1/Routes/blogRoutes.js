@@ -1,5 +1,6 @@
 const express = require("express");
 
+
 const blog = express.Router();
 
 blog.get('/all',(req,res)=>{
