@@ -4,6 +4,17 @@ const BlogPost = require('../Models/blogPost')
 
 const blog = express.Router();
 
+function ensureAuthentication(req,res,next){
+    if(req.isAuthenticated()){
+      next()
+    }else{
+      res.json({
+        status:400,
+        message:'not allowed'
+      })
+    }
+}
+
 blog.get('/all',async (req,res)=>{
 
   let posts = await BlogPost.find({})
@@ -23,6 +34,10 @@ blog.post('/new',async(req,res,next)=>{
     if(err) return next(err)
     res.json({status:200,message:'Blog Post created'})
   })
+})
+
+blog.get('/post',ensureAuthentication,function(req,res){
+  res.json({status:200,message:'we have access to this route'})
 })
 
 module.exports = blog
