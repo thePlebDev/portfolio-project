@@ -8,32 +8,41 @@ const session = require('express-session')
 const MongoStore = require('connect-mongo')(session);
 const cookieParser = require("cookie-parser");
 
+
 const apiVersion1 = require('./APIV1')
 require('dotenv').config(); // gives me access to variable set in the .env file via 'process.env.VARIABLE_NAME'
-
-const app = express()
-setUpPassport()
-
-const port = 3000
 const url = 'mongodb://127.0.0.1:27017/testBlog'
-const dbName = "testBlog"
 const dbOptions ={
   useNewUrlParser:true,
   useUnifiedTopology:true
 }
 const connection = mongoose.createConnection(url,dbOptions)
-app.use(express.json())
-app.use(express.urlencoded({extended:true}));
 const sessionStore = new MongoStore({
   mongooseConnection:connection,
   collection:'sessions'
 })
+
+const app = express()
+app.use(require('cookie-parser')())
+app.use(express.json())
+app.use(express.urlencoded({extended:true}));
 app.use(session({
   secret:process.env.SESSION_SECRET,
   resave:false,
   saveUninitialized:true,
   store:sessionStore
 }))
+app.use(passport.initialize());
+app.use(passport.session())
+setUpPassport()
+
+const port = 3000
+
+const dbName = "testBlog"
+
+
+
+
 
 //--------local database setup ----------------------
 MongoClient.connect(url,{useNewUrlParser:true},(err,

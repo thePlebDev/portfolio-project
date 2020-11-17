@@ -23,11 +23,14 @@ userRouter.post('/register', async (req,res,next)=>{
     }
 })
 
-userRouter.post('/login',
-passport.authenticate('local',{successRedirect:'/',
-                               failureRedirect:'/login',
-                              failureFlash:true})
-);
+userRouter.post("/login",passport.authenticate('login'), //authenticate pulls out username and password automatically.
+  function(req,res,next){ // this gets called on a successful login
+      res.json({
+        status:200,
+        message:'Login successful n stuff'
+      })
+  }
+)
 
 
 

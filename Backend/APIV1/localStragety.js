@@ -14,7 +14,14 @@ passport.use(new LocalStragety(
       if(!user.validPassword(password)){
         return done(null,false,{message:'incorrect password'});
       }
-      return done(null,user);
+      user.checkPassword(password,function(err,isMatch){
+        if(err){return done(err)}
+        if(isMatch){
+          return done(null,user)
+        }else{
+          return done(null,false,{message:'invalid password'})
+        }
+      })
     });
   }
 ))
