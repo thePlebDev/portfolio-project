@@ -23,7 +23,11 @@ userRouter.post('/register', async (req,res,next)=>{
     }
 })
 
-//userRouter.post('/signin')
+userRouter.post('/login',
+passport.authenticate('local',{successRedirect:'/',
+                               failureRedirect:'/login',
+                              failureFlash:true})
+);
 
 
 

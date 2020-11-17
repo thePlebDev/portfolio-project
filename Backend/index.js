@@ -1,6 +1,7 @@
 const express = require("express");
 const MongoClient = require('mongodb').MongoClient //creates the instance of the MongoClient
 const mongoose = require('mongoose');
+const setUpPassport = require("./setuppassport");
 
 const passport = require('passport')
 const session = require('express-session')
@@ -11,6 +12,7 @@ const apiVersion1 = require('./APIV1')
 require('dotenv').config(); // gives me access to variable set in the .env file via 'process.env.VARIABLE_NAME'
 
 const app = express()
+setUpPassport()
 
 const port = 3000
 const url = 'mongodb://127.0.0.1:27017/testBlog'
