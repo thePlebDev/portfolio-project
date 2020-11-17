@@ -24,7 +24,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}));
 const sessionStore = new MongoStore({
   mongooseConnection:connection,
-  collection:'session'
+  collection:'sessions'
 })
 app.use(session({
   secret:process.env.SESSION_SECRET,

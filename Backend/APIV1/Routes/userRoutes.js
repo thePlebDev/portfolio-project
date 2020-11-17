@@ -4,7 +4,7 @@ const passport = require('passport');
 
 const userRouter = express()
 
-userRouter.post('/signup', async (req,res,next)=>{
+userRouter.post('/register', async (req,res,next)=>{
   const {username,password} = req.body
 
    let user = await User.findOne(
@@ -15,12 +15,15 @@ userRouter.post('/signup', async (req,res,next)=>{
         res.json({status:100,message:'user already exists'})
     }else{
       let newUser = new User({
+        password:password,
         username:username,
-        password:password
       });
       newUser.save(next)
+      res.json({status:200,message:'a user was created'})
     }
 })
+
+//userRouter.post('/signin')
 
 
 
