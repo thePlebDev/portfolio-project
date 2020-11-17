@@ -1,8 +1,10 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 import articleData from '../ArticleData';
 import ArticleCard from '../ArticleCard';
+import useApiCall from '../../Hooks/useApiCall'
 
 
 const  Container= styled.div`
@@ -37,6 +39,9 @@ const ArticleContainer = styled.div`
 
 const BlogHome =()=>{
   const [blogState,setBlogState] = useState(articleData)
+  const {state} = useApiCall()
+  console.log(state)
+
   return(
     <Container >
       <H1>Articles</H1>

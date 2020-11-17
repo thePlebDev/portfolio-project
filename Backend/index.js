@@ -6,7 +6,7 @@ const setUpPassport = require("./setuppassport");
 const passport = require('passport')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session);
-const cookieParser = require("cookie-parser");
+const cors = require('cors')
 
 
 const apiVersion1 = require('./APIV1')
@@ -24,6 +24,7 @@ const sessionStore = new MongoStore({
 
 const app = express()
 app.use(require('cookie-parser')())
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}));
 app.use(session({
