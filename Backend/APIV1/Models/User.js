@@ -40,4 +40,4 @@ UserSchema.methods.checkPassword = function(guess,done){
 const User = mongoose.model("User",UserSchema)
 
 
-module.exports = UserSchema
+module.exports =  User
