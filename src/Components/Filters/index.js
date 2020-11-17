@@ -22,11 +22,7 @@ const Filter = ({filters,setBlogState,blogState})=>{
 
   return(
     <FilterContainer>
-        {
-          filters.map((item,index)=>{
-            return<Text key={index} onClick={(e)=>handleClick(e)}>{item}</Text>
-          })
-        }
+        <Text  onClick={(e)=>handleClick(e)}>{filters}</Text>
     </FilterContainer>
   )
 }

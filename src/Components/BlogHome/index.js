@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import axiosUtil from '../../utils/AxiosUtil'
 
 import articleData from '../ArticleData';
 import ArticleCard from '../ArticleCard';
@@ -38,18 +39,28 @@ const ArticleContainer = styled.div`
 
 
 const BlogHome =()=>{
-  const [blogState,setBlogState] = useState(articleData)
-  const {state} = useApiCall()
+  const {state,setState} = useApiCall(axiosUtil.get,'/v1/blog/all')
+  //const [blogState,setBlogState] = useState(state)
   console.log(state)
+
+  // useEffect(()=>{
+  //   if(state){
+  //     sessionStorage.setItem('posts',JSON.stringify(state.posts))
+  //   }
+  // },[state])
 
   return(
     <Container >
       <H1>Articles</H1>
       <ArticleContainer>
         {
-          blogState.map((item,index)=>{
-            return <ArticleCard setBlogState={setBlogState} blogState={blogState} key={index} image={item.image} filters={item.filters} title={item.title} description={item.description} />
+          state
+            ?
+          state.map((item,index)=>{
+            return <ArticleCard setBlogState={setState} blogState={state} key={index} image={item.image} filters={item.filters} title={item.title} description={item.description} />
           })
+          :
+          ''
         }
       </ArticleContainer>
     </Container>
