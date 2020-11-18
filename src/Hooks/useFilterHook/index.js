@@ -4,7 +4,7 @@ import React from 'react';
 
 const useFilter =(setBlogState,blogState)=>{
 
-  console.log(blogState.posts)
+  //console.log(blogState.posts)
   const handleClick =(e)=>{
     let value = e.target.textContent
 

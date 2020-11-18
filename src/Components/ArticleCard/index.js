@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom'
 
 import Filter from '../Filters'
 
@@ -35,6 +36,8 @@ const Title = styled.div`
 
 const ReadMore = styled.div`
   font-size: 0.75rem;
+  cursor:pointer;
+
 `
 
 const FilterContainer =styled.div`
@@ -43,15 +46,16 @@ const FilterContainer =styled.div`
   justify-content:center;
 `
 
-const ArticleCard =({image,title,filters,description,setBlogState,blogState})=>{
-
+const ArticleCard =({image,title,filters,description,setBlogState,blogState,id})=>{
   return(
     <Container>
       <img  style={{height:'200px',width:'350px'}} src={image} alt='city' />
       <Filter filters={filters} setBlogState={setBlogState} blogState={blogState}/>
       <Title>{title}</Title>
       <Description>{description}</Description>
-      <ReadMore> Read more</ReadMore>
+      <Link to={`blog/${id}`}>
+        <ReadMore> Read more</ReadMore>
+      </Link>
     </Container>
   )
 

@@ -5,6 +5,7 @@ import LockIcon from '@material-ui/icons/Lock';
 
 import useAdminForm from '../../Hooks/useAdminForm';
 import validation from '../../utils/Validation';
+import axiosCall from '../../utils/AxiosUtil'
 
 import Form from '../Form';
 import AdminPasswordInput from '../AdminPasswordInput'
@@ -21,12 +22,12 @@ const Container = styled.div`
 
 
 const AdminLogin =()=>{
-  const {state,handleChange,handleSubmit,errors} = useAdminForm(validation.adminLogin)
+  const {state,handleChange,handleSubmit,errors} = useAdminForm(validation.adminLogin,axiosCall.post)
   return(
     <Container>
       <LockIcon style={{fontSize:'80px'}}/>
       <Form onSubmit={handleSubmit}>
-        <AdminTextInput state={state.username} handleChange={handleChange}  error={errors.username}/>
+        <AdminTextInput state={state.username} handleChange={handleChange } name={'username'}  error={errors.username}/>
         <AdminPasswordInput state={state.password} handleChange={handleChange} error={errors.password}/>
         <SubmitButton type='Submit'> Submit</SubmitButton>
       </Form>
