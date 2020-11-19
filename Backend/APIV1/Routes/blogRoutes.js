@@ -40,4 +40,12 @@ blog.get('/post',ensureAuthentication,function(req,res){
   res.json({status:200,message:'we have access to this route'})
 })
 
+blog.post('/single', async (req,res,next)=>{
+  const {id} = req.body
+    let posts =  await BlogPost.findById(id).exec().catch(next)
+    res.json({status:200,posts})
+
+
+})
+
 module.exports = blog
