@@ -23,8 +23,9 @@ const sessionStore = new MongoStore({
 })
 
 const app = express()
-app.use(require('cookie-parser')())
 app.use(cors())
+app.use(require('cookie-parser')())
+
 app.use(express.json())
 app.use(express.urlencoded({extended:true}));
 app.use(session({

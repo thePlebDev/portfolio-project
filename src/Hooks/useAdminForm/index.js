@@ -1,11 +1,12 @@
 import React,{useState,useEffect} from 'react';
-import axiosUtil from '../../utils/AxiosUtil'
+import {url} from '../../utils/Constants'
 
 const useAdminForm =(validation,axiosCall)=>{
 
   const [state,setState] = useState({username:'',password:''})
   const [errors,setErrors] = useState({})
   const [isSubmitting,setIsSubmitting] = useState(false)
+  const [redirect,setRedirect] = useState(false)
 
   const handleChange =(e)=>{
     const {name,value} = e.target
@@ -23,9 +24,13 @@ const useAdminForm =(validation,axiosCall)=>{
     if(isSubmitting && Object.keys(errors).length === 0){
       // this is where the api call will go
       console.log('the api call')
-      axiosCall({username:state.username,password:state.password})
-        .then(data=>console.log(data))
-        .catch(error =>console.log('ERROR ----> ' + error))
+      axiosCall(`${url}user/login`,{username:state.username,password:state.password})
+        .then((data)=>{
+            if(data.data.status === 200){
+              setRedirect(true)
+            }
+          })
+        .catch(error =>setErrors({username:'incorrect',password:'incorrect'}))
 
     }
     setIsSubmitting(false)
@@ -35,7 +40,8 @@ const useAdminForm =(validation,axiosCall)=>{
     state,
     errors,
     handleChange,
-    handleSubmit
+    handleSubmit,
+    redirect
   }
 
 }

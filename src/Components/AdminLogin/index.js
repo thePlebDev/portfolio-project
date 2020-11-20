@@ -1,6 +1,7 @@
-import React,{useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import LockIcon from '@material-ui/icons/Lock';
+import { Redirect } from 'react-router-dom'
 
 
 import useAdminForm from '../../Hooks/useAdminForm';
@@ -22,7 +23,11 @@ const Container = styled.div`
 
 
 const AdminLogin =()=>{
-  const {state,handleChange,handleSubmit,errors} = useAdminForm(validation.adminLogin,axiosCall.post)
+  const {state,handleChange,handleSubmit,errors,redirect} = useAdminForm(validation.adminLogin,axiosCall.post)
+  if(redirect){
+    return <Redirect to='/blog/admin/post'/>
+  }
+
   return(
     <Container>
       <LockIcon style={{fontSize:'80px'}}/>

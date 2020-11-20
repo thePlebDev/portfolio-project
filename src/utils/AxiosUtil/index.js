@@ -15,7 +15,7 @@ let axiosUtil =(function(){
 
     async post(location,obj){
       try{
-        let data = await axios.post('http://localhost:3000/v1/user/login',{})
+        let data = await axios.post(`${location}`,obj)
         return data
       }
       catch(err){
