@@ -23,7 +23,10 @@ const useBlogPost =(validation,id)=>{
   useEffect(()=>{
     if(isSubmitting && Object.keys(errors).length ===0 ){
       console.log('api call')
-      axios.post('http://localhost:3000/v1/blog/new',{id})
+      axios.post('http://localhost:3000/v1/blog/new',
+        { withCredentials: true },
+        {image:state.imageLink,title:state.title,description:state.description,filters:state.filters,body:state.body}
+        )
         .then(data=> console.log(data.data))
         .catch(error => console.log('error --> ' +error))
     }

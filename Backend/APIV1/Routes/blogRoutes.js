@@ -5,6 +5,7 @@ const BlogPost = require('../Models/blogPost')
 const blog = express.Router();
 
 function ensureAuthentication(req,res,next){
+  console.log(req.isAuthenticated())
     if(req.isAuthenticated()){
       next()
     }else{
