@@ -22,8 +22,9 @@ blog.get('/all',async (req,res)=>{
   res.json({status:200,posts:posts})
 })
 
-blog.post('/new',ensureAuthentication,async(req,res,next)=>{
+blog.post('/new',async(req,res,next)=>{
   const {image,filters,title,description,body} = req.body
+  console.log('inside of the post creations route')
   const newBlogPost = new BlogPost({
     image,
     filters,

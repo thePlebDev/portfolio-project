@@ -53,7 +53,7 @@ const ArticleCard =({image,title,filters,description,setBlogState,blogState,id})
       <Filter filters={filters} setBlogState={setBlogState} blogState={blogState}/>
       <Title>{title}</Title>
       <Description>{description}</Description>
-      <Link to={`blog/${id}`}>
+      <Link to={`/blog/${id}`}>
         <ReadMore> Read more</ReadMore>
       </Link>
     </Container>

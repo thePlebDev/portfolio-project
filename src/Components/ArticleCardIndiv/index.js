@@ -13,17 +13,27 @@ const Container = styled.div`
   width:70%;
   margin:0 auto;
 `
+const Text = styled.div `
+  font-size:2rem;
+  font-weight:500;
+  text-align:center;
+  margin-top:20px;
+`
+const Filter = styled.div`
+font-weight:500;
+text-align:center;
+margin-top:20px;
+font-size:1.2rem;
+`
+
+
 
 const ArticleCardIndiv = ({match})=>{
 let id = match.params.id
 
 const {state,setState} = useApiCall(axiosUtil.get,'/v1/blog/single',id)
+console.log('state should be below')
 console.log(state)
-// useEffect(()=>{
-//   axios.get('http://localhost:3000/v1/blog/single',{params:{name:'bob'}})
-//     .then(data=>console.log(data.data))
-//     .catch(error =>console.log('error ---> ' + error))
-// },[])
 
 // it needs an axios function and a location
 const renderers = {
@@ -33,7 +43,7 @@ const renderers = {
 }
 
 const markdown = `
-  Below should demostrate how the console.log() method
+  Below should demonstrate how the console.log() method
   ~~~js
   console.log('this should look funky')
   ~~~
@@ -43,7 +53,17 @@ const markdown = `
 
   return(
     <Container>
-      <ReactMarkdown renderers={renderers} children={markdown} />
+      {
+        state
+            ?
+            <div>
+              <Text>{state.posts.title}</Text>
+              <Filter>{state.posts.filters}</Filter>
+              <ReactMarkdown renderers={renderers} children={state.posts.body} />
+            </div>
+            :
+        <h1>state is not here</h1>
+      }
     </Container>
   )
 }
