@@ -2,9 +2,9 @@ import axios from 'axios'
 const url ='http://localhost:3000'
 let axiosUtil =(function(){
   return{
-    async get(location){
+    async get(location,obj){
       try{
-        let data = await axios.get(`${url}${location}`)
+        let data = await axios.get(`${url}${location}`,{params:{obj}})
          return data
       }
       catch(err){

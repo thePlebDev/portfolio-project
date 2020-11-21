@@ -56,7 +56,7 @@ const BlogHome =()=>{
         {
           state
             ?
-          state.map((item,index)=>{
+          state.posts.map((item,index)=>{
             return <ArticleCard key={item._id} id={item._id} setBlogState={setState} blogState={state} key={index} image={item.image} filters={item.filters} title={item.title} description={item.description} />
           })
           :

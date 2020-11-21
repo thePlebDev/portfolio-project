@@ -3,14 +3,14 @@ import axiosUtil from '../../utils/AxiosUtil'
 
 
 
-const useApiCall =(axiosCall,location)=>{
+const useApiCall =(axiosCall,location,id)=>{
   const [state,setState] = useState()
 
   useEffect(()=>{
-    axiosCall(location)
-      .then(data=>setState(data.data.posts))
+    axiosCall(location,id)
+      .then(data=>setState(data.data))
       .catch(error=>console.log('ERROR--> '+ error))
-  },[axiosCall,location])
+  },[axiosCall,location,id])
 
   return{
     state,
