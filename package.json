@@ -21,7 +21,11 @@
     "react-scroll": "^1.8.1",
     "react-syntax-highlighter": "^15.3.0",
     "react-transition-group": "^4.4.1",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "testRegex": "((\\.|/*.)(spec))\\.js?$",
+  "setupFilesAfterEnv": [
+    "<rootDir>/jest.setup.js"
+  ]
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,5 +47,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5"
   }
 }
