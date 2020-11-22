@@ -37,9 +37,9 @@ app.use(session({
   saveUninitialized:false,
   store:sessionStore,
 }))
+setUpPassport()
 app.use(passport.initialize());
 app.use(passport.session())
-setUpPassport()
 
 const port = 3000
 
