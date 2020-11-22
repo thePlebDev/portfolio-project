@@ -1,10 +1,16 @@
 import axios from 'axios'
 const url ='http://localhost:3000'
+// const instance = axios.create({
+//   withCredentials:true
+// })
+
+axios.defaults.withCredentials = true
+
 let axiosUtil =(function(){
   return{
     async get(location,obj){
       try{
-        let data = await axios.get(`${url}${location}`,{params:{obj}})
+        let data = await axios.get(`${url}${location}`,{params:{obj}}, { withCredentials: true })
          return data
       }
       catch(err){
@@ -15,7 +21,7 @@ let axiosUtil =(function(){
 
     async post(location,obj){
       try{
-        let data = await axios.post(`${location}`,obj)
+        let data = await axios.post(`${location}`, obj, { withCredentials: true })
         return data
       }
       catch(err){

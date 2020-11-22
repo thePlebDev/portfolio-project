@@ -7,7 +7,7 @@ const useAdminForm =(validation,axiosCall)=>{
   const [errors,setErrors] = useState({})
   const [isSubmitting,setIsSubmitting] = useState(false)
   const [redirect,setRedirect] = useState(false)
-
+ 
   const handleChange =(e)=>{
     const {name,value} = e.target
     setState({...state,[name]:value})
@@ -24,7 +24,7 @@ const useAdminForm =(validation,axiosCall)=>{
     if(isSubmitting && Object.keys(errors).length === 0){
       // this is where the api call will go
       console.log('the api call')
-      axiosCall(`${url}user/login`,{username:state.username,password:state.password},{ withCredentials: true })
+      axiosCall(`${url}user/login`,{username:state.username,password:state.password})
         .then((data)=>{
             if(data.data.status === 200){
               setRedirect(true)

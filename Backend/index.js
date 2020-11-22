@@ -2,6 +2,7 @@ const express = require("express");
 const MongoClient = require('mongodb').MongoClient //creates the instance of the MongoClient
 const mongoose = require('mongoose');
 const setUpPassport = require("./setuppassport");
+const cookieParser = require('cookie-parser');
 
 const passport = require('passport')
 const session = require('express-session')
@@ -25,19 +26,19 @@ const sessionStore = new MongoStore({
 const app = express()
 app.use(cors({credentials: true,origin: 'http://localhost:3001'}))
 
+setUpPassport()
 
 
-app.use(require('cookie-parser')())
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}));
+app.use(cookieParser())
 app.use(session({
   secret:process.env.SESSION_SECRET,
   resave:false,
   saveUninitialized:false,
   store:sessionStore,
 }))
-setUpPassport()
 app.use(passport.initialize());
 app.use(passport.session())
 
