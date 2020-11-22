@@ -3,9 +3,14 @@ import renderer from 'react-test-renderer';
 import { mount } from 'enzyme'
 
 import AboutCard from '../Components/AboutCard'
-
-describe('app',()=>{
-  it('renders stuff',()=>{
-    expect(2).toEqual(2)
+//1)create the snapshot
+//2)testing props
+//3)testing the types of props
+//testing events
+ 
+describe('testing the AboutCard',()=>{
+  it('should render the snapshot correctly',()=>{
+    const tree = renderer.create(<AboutCard />).toJSON();
+    expect(tree).toMatchSnapshot();
   })
 })
