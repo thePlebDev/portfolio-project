@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import AdminLogin from '../Components/AdminLogin'
 
 
-//1)snapshot testing
+//1) (DONE) snapshot testing 
 //2) testing the props(default and custom)
 //3) testing the data types
 //4)data type prop testing.

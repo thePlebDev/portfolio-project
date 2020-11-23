@@ -7,7 +7,8 @@ import Home from '../Home'
 import BlogHome from '../BlogHome';
 import AdminLogin from '../AdminLogin';
 import BlogPostEditor from '../BlogPostEditor';
-import ArticleCardIndiv from '../ArticleCardIndiv'
+import ArticleCardIndiv from '../ArticleCardIndiv';
+import ProjectsPage from '../ProjectsPage'
 
 
 
@@ -24,6 +25,7 @@ const App =()=>{
         <Route exact path="/blog/admin" component={AdminLogin} />
         <Route exact path="/blog/admin/post" component={BlogPostEditor} />
         <Route exact path="/blog/:id" component={ArticleCardIndiv} />
+        <Route exact path="/projects" component={ProjectsPage} />
       </Switch>
     </div>
   )

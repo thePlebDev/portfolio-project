@@ -1,9 +1,9 @@
 import React,{useState,useEffect} from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
+
 import axiosUtil from '../../utils/AxiosUtil'
 
-import articleData from '../ArticleData';
+
 import ArticleCard from '../ArticleCard';
 import useApiCall from '../../Hooks/useApiCall'
 

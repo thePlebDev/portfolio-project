@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     display:flex;
@@ -9,10 +10,29 @@ const Container = styled.div`
 `
 const Text = styled.span`
 padding:10px;
-font-size:20px;
+font-size:25px;
 text-transform:uppercase;
 opacity:0.6;
-cursor:pointer
+cursor:pointer;
+position:relative;
+
+&:after{
+  content:'';
+  background-color:red;
+  height:2px;
+  width:0px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:0 auto;
+  transition:all .3s;
+
+};
+
+&:hover:after{
+  width:90px;
+}
 `
 
 
@@ -20,12 +40,19 @@ cursor:pointer
 
 const MiniNav =()=>{
 
-
   return(
     <Container>
-      <Text>Home</Text>
-      <Text>Articles</Text>
-      <Text>About</Text>
+      <Link to="/">
+        <Text>Home</Text>
+      </Link>
+      <a href="#projects">
+        <Link to="/projects">
+            <Text>Projects</Text>
+        </Link>
+      </a>
+      <Link to="/blog">
+        <Text>Blog</Text>
+      </Link>
     </Container>
   )
 }

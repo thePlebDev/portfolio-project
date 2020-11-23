@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -47,10 +48,18 @@ const NavBar =({state,setState})=>{
             <h2>Tristan Elliott</h2>
         </Text>
         <IconContainer>
+          <a href="https://www.youtube.com/channel/UCc9o1zG46k4voqOT7C6Ankw" target="_blank" rel="noreferrer noopener">
             <YouTubeIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
-            <TwitterIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
-            <GitHubIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
-            <SearchIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
+          </a>
+            <a href="https://twitter.com/Tristanthewebd1" target="_blank" rel="noreferrer noopener">
+              <TwitterIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
+            </a>
+            <a href="https://github.com/thePlebDev" target="_blank" rel="noreferrer noopener">
+              <GitHubIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
+            </a>
+            <a >
+              <SearchIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
+            </a>
         </IconContainer>
     </Container>
   )

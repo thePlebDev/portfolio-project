@@ -50,25 +50,6 @@ const ContactForm =()=>{
   return(
     <Form onSubmit={handleSubmit} email={email}>
 
-      <EmailResponse status={status} setStatus={setStatus}/>
-      <div id="contact" style={{display:'flex'}}>
-          <Contact>Contact </Contact>
-          <a href="https://github.com/thePlebDev" target="_blank" rel="noopener noreferrer" style={{alignSelf:'center'}}>
-            <Icon>
-              <GitHubIcon/>
-            </Icon>
-          </a>
-          <a href="https://twitter.com/Tristanthewebd1" target="_blank" rel="noopener noreferrer" style={{alignSelf:'center'}}>
-          <Icon>
-            <TwitterIcon style={{alignSelf:'center',marginLeft:'10px'}}/>
-          </Icon>
-          </a>
-      </div>
-      <Title>Get in touch - let's work together</Title>
-      <InputText type={'text'} name='name' error={errors.name} value={state.name} onChange={handleChange} />
-      <InputText type={'email'} name='email' error={errors.email} value={state.email} onChange={handleChange} />
-      <InputTextArea name='subject' error={errors.subject}  value={state.subject} onChange={handleChange} />
-      <SubmitButton />
 
     </Form>
   )
