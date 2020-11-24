@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`testin the admin login should render properly 1`] = `
+exports[`testin the admin login should test the snapshot properly 1`] = `
 <div
   className="sc-gKAblj fRSZFp"
+  data-testid="container"
 >
   <svg
     aria-hidden={true}

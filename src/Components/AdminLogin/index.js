@@ -29,11 +29,11 @@ const AdminLogin =()=>{
   }
 
   return(
-    <Container>
+    <Container data-testid="container">
       <LockIcon style={{fontSize:'80px'}}/>
       <Form onSubmit={handleSubmit}>
-        <AdminTextInput state={state.username} handleChange={handleChange } name={'username'}  error={errors.username}/>
-        <AdminPasswordInput state={state.password} handleChange={handleChange} error={errors.password}/>
+        <AdminTextInput state={state.username} handleChange={handleChange } data-testid="input" name={'username'}  error={errors.username}/>
+        <AdminPasswordInput state={state.password} handleChange={handleChange} data-testid="input" error={errors.password}/>
         <SubmitButton type='Submit'> Submit</SubmitButton>
       </Form>
     </Container>
