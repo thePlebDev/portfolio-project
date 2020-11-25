@@ -9,6 +9,7 @@ import AdminPasswordInput from '../Components/AdminPasswordInput'
 // configure({ adapter: new Adapter() });
 
 
+
 //1) (DONE) test snapshow
 //2) testing props, what goes in and what comes out
 //3) testing the type of the props

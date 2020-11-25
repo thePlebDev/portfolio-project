@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the AdminTextInput should test the snapshot function 1`] = `
+<div
+  className="sc-bdnylx cKBbeu"
+  data-testid="container"
+>
+  <label
+    for="username"
+  >
+    <input
+      className="sc-gtssRu fOFZCV"
+      data-testid="input"
+      id="username"
+      name="enter name prop"
+      onChange={[Function]}
+      placeholder="enter name prop"
+      type="text"
+      value="enter state prop"
+    />
+  </label>
+</div>
+`;
