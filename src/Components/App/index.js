@@ -17,8 +17,8 @@ const App =()=>{
 
   return(
     <div>
-      <NavBar state={state} setState={setState}/>
-      <MinNav/>
+      <NavBar state={state} setState={setState} data-testid="navbar"/>
+      <MinNav data-testid="mininavbar"/>
       <Switch>
         <Route exact path="/" render={(props)=>(<Home {...props} state={state} setState={setState}/>)}  />
         <Route exact path="/blog" component={BlogHome} />

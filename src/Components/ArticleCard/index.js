@@ -45,16 +45,20 @@ const FilterContainer =styled.div`
   align-items:center;
   justify-content:center;
 `
+const defaultImage="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1713&q=80"
+const defaultDescription="Click read more to view the whole article"
+const defaultTitle="This post deals with JavaScript"
+const defaultFilter = "#React"
 
-const ArticleCard =({image,title,filters,description,setBlogState,blogState,id})=>{
+const ArticleCard =({image=defaultImage,title=defaultTitle,filters=defaultFilter,description=defaultDescription,setBlogState,blogState,id})=>{
   return(
     <Container>
-      <img  style={{height:'200px',width:'350px'}} src={image} alt='city' />
+      <img data-testid='image'  style={{height:'200px',width:'350px'}} src={image} alt='city' />
       <Filter filters={filters} setBlogState={setBlogState} blogState={blogState}/>
-      <Title>{title}</Title>
-      <Description>{description}</Description>
+      <Title data-testid='title' >{title}</Title>
+      <Description data-testid='description' >{description}</Description>
       <Link to={`/blog/${id}`}>
-        <ReadMore> Read more</ReadMore>
+        <ReadMore data-testid='read-more' > Read more</ReadMore>
       </Link>
     </Container>
   )

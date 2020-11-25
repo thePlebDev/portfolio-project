@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing the ArticleCard component should create the snapshot 1`] = `
+<div
+  className="sc-dlnjPT kYIEqD"
+>
+  <img
+    alt="city"
+    data-testid="image"
+    src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1713&q=80"
+    style={
+      Object {
+        "height": "200px",
+        "width": "350px",
+      }
+    }
+  />
+  <div
+    className="sc-bdnylx eMLUIs"
+  >
+    <div
+      className="sc-gtssRu bENsCd"
+      onClick={[Function]}
+    >
+      #React
+    </div>
+  </div>
+  <div
+    className="sc-eCApGN bKfbFH"
+    data-testid="title"
+  >
+    This post deals with JavaScript
+  </div>
+  <div
+    className="sc-hKFyIo bOhjDH"
+    data-testid="description"
+  >
+    Click read more to view the whole article
+  </div>
+  <a
+    href="/blog/undefined"
+    onClick={[Function]}
+  >
+    <div
+      className="sc-jSFkmK hJsiHT"
+      data-testid="read-more"
+    >
+       Read more
+    </div>
+  </a>
+</div>
+`;

@@ -42,14 +42,6 @@ const renderers = {
   }
 }
 
-const markdown = `
-  Below should demonstrate how the console.log() method
-  ~~~js
-  console.log('this should look funky')
-  ~~~
-
-  ## title
-`
 
   return(
     <Container>

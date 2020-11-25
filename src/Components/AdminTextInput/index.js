@@ -11,7 +11,7 @@ const Input = styled.input`
   border:${props=>props.state ? '1px solid red':'1px solid black'};
 `
 
-const AdminTextInput = ({state="enter state prop",handleChange="enter handleChange prop",error="enter error prop",name="enter name prop"})=>{
+const AdminTextInput = ({state="enter state prop",handleChange={function(){console.log('enter handleChange prop')}},error="enter error prop",name="enter name prop"})=>{
 
   return(
     <Container data-testid="container">
