@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the Form component should test the snapshot 1`] = `
+<form
+  className="sc-bdnylx kFpyQD"
+  data-testid="container"
+  onSubmit={[Function]}
+/>
+`;
