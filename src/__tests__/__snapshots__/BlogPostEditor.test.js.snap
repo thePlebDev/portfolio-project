@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the BlogPostEditor Component should test the snapshot 1`] = `
+<div
+  className="sc-jSFkmK hDoHkc"
+  data-testid="container"
+>
+  <form
+    className="sc-bdnylx kFpyQD"
+    onSubmit={[Function]}
+  >
+    <div
+      className="sc-gtssRu iMKyf"
+      data-testid="container"
+    >
+      <label
+        for="username"
+      >
+        <input
+          className="sc-dlnjPT dFiXol"
+          data-testid="input"
+          id="username"
+          name="imageLink"
+          onChange={[Function]}
+          placeholder="imageLink"
+          type="text"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      className="sc-gtssRu iMKyf"
+      data-testid="container"
+    >
+      <label
+        for="username"
+      >
+        <input
+          className="sc-dlnjPT dFiXol"
+          data-testid="input"
+          id="username"
+          name="title"
+          onChange={[Function]}
+          placeholder="title"
+          type="text"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      className="sc-gtssRu iMKyf"
+      data-testid="container"
+    >
+      <label
+        for="username"
+      >
+        <input
+          className="sc-dlnjPT dFiXol"
+          data-testid="input"
+          id="username"
+          name="description"
+          onChange={[Function]}
+          placeholder="description"
+          type="text"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      className="sc-gtssRu iMKyf"
+      data-testid="container"
+    >
+      <label
+        for="username"
+      >
+        <input
+          className="sc-dlnjPT dFiXol"
+          data-testid="input"
+          id="username"
+          name="filters"
+          onChange={[Function]}
+          placeholder="filters"
+          type="text"
+          value=""
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        <textarea
+          className="sc-eCApGN bxyVFY"
+          name="body"
+          onChange={[Function]}
+        />
+      </label>
+    </div>
+    <button
+      className="sc-hKFyIo derYWF"
+      type="submit"
+    >
+      SEND
+    </button>
+  </form>
+</div>
+`;

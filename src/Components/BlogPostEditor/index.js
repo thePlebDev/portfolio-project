@@ -16,18 +16,18 @@ const Container = styled.div`
   margin:0 auto;
 `
 
-const BlogPostEditor =()=>{
-  const {state,errors,handleChange,handleSubmit} = useBlogPost(validation.blogPost)
+const BlogPostEditor =({useApiCal=useBlogPost})=>{
+  const {state,errors,handleChange,handleSubmit} = useApiCal(validation.blogPost)
 
   return(
-    <Container>
+    <Container data-testid="container">
         <Form onSubmit={handleSubmit}>
-          <AdminTextInput state={state.imageLink} name={'imageLink'} handleChange={handleChange} error={errors.imageLink} />
-          <AdminTextInput state={state.title} name={'title'} handleChange={handleChange} error={errors.title} />
-          <AdminTextInput state={state.description} name={'description'} handleChange={handleChange} error={errors.description} />
-          <AdminTextInput state={state.filters} name={'filters'} handleChange={handleChange} error={errors.filters} />
-          <TextArea value={state.body} handleChange={handleChange} name={'body'} />
-          <SubmitButton>Click</SubmitButton>
+          <AdminTextInput data-testid="input" state={state.imageLink} name={'imageLink'} handleChange={handleChange} error={errors.imageLink} />
+          <AdminTextInput data-testid="input" state={state.title} name={'title'} handleChange={handleChange} error={errors.title} />
+          <AdminTextInput data-testid="input" state={state.description} name={'description'} handleChange={handleChange} error={errors.description} />
+          <AdminTextInput data-testid="input" state={state.filters} name={'filters'} handleChange={handleChange} error={errors.filters} />
+          <TextArea data-testid="input" value={state.body} handleChange={handleChange} name={'body'} />
+          <SubmitButton data-testid="button">Click</SubmitButton>
         </Form>
     </Container>
   )
