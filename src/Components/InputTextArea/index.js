@@ -14,11 +14,11 @@ const TextArea = styled.textarea`
 `
 
 
-const InputTextArea =({name,error,value,onChange})=>{
+const InputTextArea =({name="enter name prop",error='enter error prop',value='enter value prop',onChange})=>{
   return(
     <div>
-      <label for={name}></label>
-      <TextArea name={name} id={name} error={error} value={value} onChange={(e)=>onChange(e)}placeholder="MESSAGE"></TextArea>
+      <label for={name} data-testid="label"></label>
+      <TextArea name={name} data-testid="textarea" id={name} error={error} value={value} onChange={(e)=>onChange(e)}placeholder="MESSAGE"></TextArea>
     </div>
   )
 }

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the InputTextArea component should render the snapshot 1`] = `
+<div>
+  <label
+    data-testid="label"
+    for="enter name prop"
+  />
+  <textarea
+    className="sc-bdnylx jMJXPG"
+    data-testid="textarea"
+    id="enter name prop"
+    name="enter name prop"
+    onChange={[Function]}
+    placeholder="MESSAGE"
+    value="enter value prop"
+  />
+</div>
+`;
