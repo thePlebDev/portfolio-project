@@ -14,9 +14,9 @@ const Container = styled.div`
 
 `
 
-const Demo = ({showVid})=>{
+const Demo = ({showVid='what the heck is going on'})=>{
   return(
-    <Container state={showVid}>
+    <Container state={showVid} data-testid="container">
             <ReactPlayer width="100%" height="90%" controls url="https://www.youtube.com/watch?v=7sDY4m8KNLc&t=58s" />
     </Container>
   )
