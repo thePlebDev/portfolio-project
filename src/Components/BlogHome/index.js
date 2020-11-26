@@ -36,12 +36,9 @@ const ArticleContainer = styled.div`
     grid-gap:2rem;
 `
 
-
-
-const BlogHome =()=>{
-  const {state,setState} = useApiCall(axiosUtil.get,'/v1/blog/all')
+const BlogHome =({apiHook=useApiCall})=>{
+  const {state,setState} = apiHook(axiosUtil.get,'/v1/blog/all')
   //const [blogState,setBlogState] = useState(state)
-  console.log(state)
 
   // useEffect(()=>{
   //   if(state){
@@ -50,9 +47,9 @@ const BlogHome =()=>{
   // },[state])
 
   return(
-    <Container >
+    <Container>
       <H1>Articles</H1>
-      <ArticleContainer>
+      <ArticleContainer data-testid="container">
         {
           state
             ?
