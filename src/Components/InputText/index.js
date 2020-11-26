@@ -31,13 +31,19 @@ const Label = styled.label`
 `
 
 
-const InputText =({name,value,onChange,error,type})=>{
+const InputText =(
+
+  {name='enter name prop',value='enter value prop',
+  onChange={function(){console.log('enter onChange prop')}},error='enter error prop',type='text'}
+              )=>{
+
   const [state,setState] = useState(false)
 
   const handleClick =(e)=>{
     if(e.target.value){
       setState(true)
-    }else{
+    }
+    else{
       setState(!state)
     }
 
@@ -45,9 +51,10 @@ const InputText =({name,value,onChange,error,type})=>{
 
   return(
     <div style={{position:'relative'}}>
-      <Input type={type} error={error} id={name} autocomplete="off" onFocus={(e)=>handleClick(e)}
-      onBlur={(e)=>handleClick(e)} value={value} onChange={(e)=>onChange(e)} name={name}></Input>
-      <Label state={state} error={error} className="label" for={name}>{name}</Label>
+      <Input type={type} error={error} id={name} autocomplete="off" onFocus={(e)=>handleClick(e)} data-testid="input"
+        onBlur={(e)=>handleClick(e)} value={value} onChange={(e)=>onChange(e)} onClick={(e)=>handleClick(e)} name={name}>
+      </Input>
+      <Label state={state} error={error} data-testid="label" className="label" for={name}>{name}</Label>
     </div>
   )
 }

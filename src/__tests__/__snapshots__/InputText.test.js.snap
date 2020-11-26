@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the InputText component should render a proper snapshot 1`] = `
+<div
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
+>
+  <input
+    className="sc-bdnylx dTAPuY"
+    data-testid="input"
+    id="enter name prop"
+    name="enter name prop"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="text"
+    value="enter value prop"
+  />
+  <label
+    className="sc-gtssRu koWzil label"
+    data-testid="label"
+    for="enter name prop"
+  >
+    enter name prop
+  </label>
+</div>
+`;
