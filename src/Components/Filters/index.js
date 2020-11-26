@@ -15,14 +15,13 @@ const Text = styled.div`
   cursor:pointer;
 `
 
-const Filter = ({filters,setBlogState,blogState})=>{
+const Filter = ({filters,setBlogState,blogState,useApiCall=useFilter})=>{
 
-  const {handleClick} = useFilter(setBlogState,blogState)
-
+  const {handleClick} = useApiCall(setBlogState,blogState)
 
   return(
-    <FilterContainer>
-        <Text  onClick={(e)=>handleClick(e)}>{filters}</Text>
+    <FilterContainer data-testid="container">
+        <Text data-testid="text" onClick={(e)=>handleClick(e)}>{filters}</Text>
     </FilterContainer>
   )
 }
