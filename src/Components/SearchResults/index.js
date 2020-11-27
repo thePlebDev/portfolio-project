@@ -16,30 +16,39 @@ const Articles = styled.div`
   grid-gap:2rem;
 `
 const Text = styled.div`
-  margin-left:10%;
+  text-align:center;
   font-size:1.5rem;
+  margin-top:10px;
   margin-bottom:10px;
+  position:relative;
+  &:after{
+    content:'';
+    height:2px;
+    width:80px;
+    margin:0 auto;
+    position:absolute;
+    background-color:rgb(30, 130, 87);
+    left:0;
+    right:0;
+    bottom:0;
+
+  }
 `
 
-const SearchResults =()=>{
-  const [state,setState] = useState()
-  useEffect(()=>{
-    let cachedHits = sessionStorage.getItem('posts')
-    setState(JSON.parse(cachedHits))
-  },[])
+const SearchResults =({searchResults})=>{
 
   return(
     <Container>
       <Text>Articles</Text>
         <Articles>
             {
-              state
+              searchResults
                 ?
-                state.map((item)=>{
+                searchResults.map((item)=>{
                   return <SearchArticles key={item.key} title={item.title} description={item.description} filters={item.filters}/>
                 })
                 :
-                ''
+                <div>Nothing found</div>
             }
         </Articles>
     </Container>

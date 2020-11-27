@@ -1,20 +1,21 @@
 import React,{useEffect,useState} from 'react'
 
 
-const useSearchInput =()=>{
+const useSearchInput =(searchResults,setSearchResults)=>{
   const [state,setState] = useState({search:''})
+  const [searchingState,setSearchingState] = useState()
 
   const handleChange=(e)=>{
-
     const {name,value} = e.target
     setState({...state,[name]:value})
-    console.log(state)
 
+      setSearchResults(searchingState.filter(item => item.title.includes((state.search))))
   }
 
   useEffect(()=>{
-    console.log('searching the database for -->' + state.search)
-  },[state])
+    let cachedHits = sessionStorage.getItem('posts')
+    setSearchingState(JSON.parse(cachedHits))
+  },[])
 
   return{
     handleChange,

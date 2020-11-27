@@ -16,7 +16,7 @@ const Input = styled.input`
 
 
 
-const SearchInput=({state,handleChange,setShow})=>{
+const SearchInput=({state,handleChange,setShow,setSearchResults,searchResults})=>{
   return(
     <Label >
       <Input type="text" placeholder='Search blog posts...' onChange={(e)=>{handleChange(e)}} value={state} name="search" />

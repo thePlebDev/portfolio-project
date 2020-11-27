@@ -15,16 +15,22 @@ const Container = styled.div`
 
 
 const SearchBar = ({show,setShow,storage})=>{
+  const [searchResults,setSearchResults] = useState()
 
-  const {state,handleChange} = useSearchInput()
+  useEffect(()=>{
+    let cachedHits = sessionStorage.getItem('posts')
+    setSearchResults(JSON.parse(cachedHits))
+  },[])
+
+  const {state,handleChange} = useSearchInput(searchResults,setSearchResults)
   return(
     <Container>
       {
         show
           ?
             <div>
-                <SearchInput state={state.search} handleChange={handleChange} setShow={setShow}/>
-                <SearchResults/>
+                <SearchInput state={state.search} handleChange={handleChange} setSearchResults={setSearchResults} searchResults={searchResults} setShow={setShow}/>
+                <SearchResults searchResults={searchResults}/>
             </div>
           :
         <div></div>
