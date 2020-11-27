@@ -9,6 +9,7 @@ import AdminLogin from '../AdminLogin';
 import BlogPostEditor from '../BlogPostEditor';
 import ArticleCardIndiv from '../ArticleCardIndiv';
 import ProjectsPage from '../ProjectsPage'
+import SearchBar from '../SearchBar'
 
 
 
@@ -19,6 +20,7 @@ const App =()=>{
     <div>
       <NavBar state={state} setState={setState} data-testid="navbar"/>
       <MinNav data-testid="mininavbar"/>
+      <SearchBar/>
       <Switch>
         <Route exact path="/" render={(props)=>(<Home {...props} state={state} setState={setState}/>)}  />
         <Route exact path="/blog" component={BlogHome} />
