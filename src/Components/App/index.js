@@ -3,7 +3,7 @@ import {Switch, Route} from 'react-router-dom'
 
 import NavBar from '../NavBar';
 import MinNav from '../MiniNav';
-import Home from '../Home'
+import Home from '../Home';
 import BlogHome from '../BlogHome';
 import AdminLogin from '../AdminLogin';
 import BlogPostEditor from '../BlogPostEditor';
@@ -11,11 +11,14 @@ import ArticleCardIndiv from '../ArticleCardIndiv';
 import ProjectsPage from '../ProjectsPage'
 import SearchBar from '../SearchBar'
 
+import useSessionStorageHook from '../../Hooks/useSessionStorageHook'
+
 
 
 const App =()=>{
   const [state,setState] = useState(false)
   const [show,setShow] = useState(true)
+  useSessionStorageHook()
 
   return(
     <div>

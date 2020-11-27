@@ -19,7 +19,7 @@ const Input = styled.input`
 const SearchInput=({state,handleChange,setShow})=>{
   return(
     <Label >
-      <Input type="text" placeHolder='Search blog posts...' onChange={(e)=>{handleChange(e)}} value={state} name="search" />
+      <Input type="text" placeholder='Search blog posts...' onChange={(e)=>{handleChange(e)}} value={state} name="search" />
       <HighlightOffIcon style={{position:'absolute',top:'25%',right:'5%','z-index':999,cursor:'pointer'}} onClick={()=>setShow(false)}/>
     </Label>
   )

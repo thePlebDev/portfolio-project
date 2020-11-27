@@ -14,12 +14,9 @@ const Container = styled.div`
 
 
 
-const SearchBar = ({show,setShow})=>{
-
+const SearchBar = ({show,setShow,storage})=>{
 
   const {state,handleChange} = useSearchInput()
-
-
   return(
     <Container>
       {

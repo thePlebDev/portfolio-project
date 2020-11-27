@@ -3,7 +3,7 @@ import axiosUtil from '../../utils/AxiosUtil'
 
 
 
-const useApiCall =(axiosCall,location,id)=>{
+const useApiCall =(axiosCall,location,id='')=>{
   const [state,setState] = useState()
 
   useEffect(()=>{
