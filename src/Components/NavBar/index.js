@@ -39,7 +39,7 @@ const IconContainer = styled.div`
 
 
 
-const NavBar =({state,setState})=>{
+const NavBar =({state,setState,setShow})=>{
   const {show} = useLoading()
 
   return(
@@ -57,9 +57,9 @@ const NavBar =({state,setState})=>{
             <a href="https://github.com/thePlebDev" target="_blank" rel="noreferrer noopener">
               <GitHubIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
             </a>
-            <a >
-              <SearchIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
-            </a>
+            <div>
+              <SearchIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}} onClick={()=>setShow(true)}/>
+            </div>
         </IconContainer>
     </Container>
   )

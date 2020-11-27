@@ -1,12 +1,12 @@
 import React,{useState,useEffect} from 'react'
 
 import styled from 'styled-components'
-import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
 import useSearchInput from '../../Hooks/useSearchInput'
+import SearchInput from '../SearchInput';
+import SearchResults from '../SearchResults'
 
 const Container = styled.div`
-
   position:absolute;
   width:100%;
 `
@@ -14,8 +14,8 @@ const Container = styled.div`
 
 
 
-const SearchBar = ()=>{
-  const [show,setShow] = useState(true)
+const SearchBar = ({show,setShow})=>{
+
 
   const {state,handleChange} = useSearchInput()
 
@@ -26,16 +26,8 @@ const SearchBar = ()=>{
         show
           ?
             <div>
-                <label style={{position:'relative',display:'flex'}} >
-                  <input type="text" placeHolder='Search blog posts' onChange={(e)=>{handleChange(e)}} value={state.search} name="search" style={{width:'90%',padding:'10px',margin:'0 auto',fontSize:'1.5rem'}}/>
-                  <HighlightOffIcon style={{position:'absolute',top:'25%',right:'5%','z-index':999,cursor:'pointer'}} onClick={()=>setShow(false)}/>
-                </label>
-
-              <div style={{textAlign:'center',border:'1px solid red',marginTop:'5px'}}>
-                  <div style={{border:'1px solid green'}}>
-                    Articles
-                  </div>
-              </div>
+                <SearchInput state={state.search} handleChange={handleChange} setShow={setShow}/>
+                <SearchResults/>
             </div>
           :
         <div></div>

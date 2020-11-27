@@ -15,12 +15,13 @@ import SearchBar from '../SearchBar'
 
 const App =()=>{
   const [state,setState] = useState(false)
+  const [show,setShow] = useState(true)
 
   return(
     <div>
-      <NavBar state={state} setState={setState} data-testid="navbar"/>
-      <MinNav data-testid="mininavbar"/>
-      <SearchBar/>
+      <NavBar state={state} setState={setState} data-testid="navbar" setShow={setShow}/>
+      <MinNav data-testid="mininavbar" />
+      <SearchBar show={show} setShow={setShow}/>
       <Switch>
         <Route exact path="/" render={(props)=>(<Home {...props} state={state} setState={setState}/>)}  />
         <Route exact path="/blog" component={BlogHome} />
