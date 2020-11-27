@@ -42,13 +42,13 @@ const SearchResults =({searchResults})=>{
       <Text>Articles</Text>
         <Articles>
             {
-              searchResults
+              searchResults && searchResults.length !== 0
                 ?
                 searchResults.map((item)=>{
-                  return <SearchArticles key={item.key} title={item.title} description={item.description} filters={item.filters}/>
+                  return <SearchArticles key={item._id} id={item._id} title={item.title} description={item.description} filters={item.filters}/>
                 })
                 :
-                <div>Nothing found</div>
+                <div style={{textAlign:'center',fontSize:'30px',margin:'10px'}}>No articles found</div>
             }
         </Articles>
     </Container>

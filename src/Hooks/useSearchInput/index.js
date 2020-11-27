@@ -8,8 +8,9 @@ const useSearchInput =(searchResults,setSearchResults)=>{
   const handleChange=(e)=>{
     const {name,value} = e.target
     setState({...state,[name]:value})
+    setSearchResults(searchingState.filter(item => item.title.includes((state.search))))
 
-      setSearchResults(searchingState.filter(item => item.title.includes((state.search))))
+
   }
 
   useEffect(()=>{

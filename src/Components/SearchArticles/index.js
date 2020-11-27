@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   text-align:center;
@@ -23,13 +24,15 @@ const Filter = styled.div`
   cursor:pointer;
 `
 
-const SearchArticles =({title,description,filters})=>{
+const SearchArticles =({title,description,filters,id})=>{
 
   return(
     <Container >
+      <Link to={`/blog/${id}`}>
         <Title>
           {title}
         </Title>
+      </Link>
         <Filter>
           {filters}
         </Filter>

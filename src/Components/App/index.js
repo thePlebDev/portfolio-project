@@ -17,7 +17,7 @@ import useSessionStorageHook from '../../Hooks/useSessionStorageHook'
 
 const App =()=>{
   const [state,setState] = useState(false)
-  const [show,setShow] = useState(true)
+  const [show,setShow] = useState(false)
   useSessionStorageHook()
 
   return(
