@@ -22,13 +22,14 @@ const Title = styled.h1`
 `
 const About = styled.h3`
   font-weight: 500;
-  display:flex;
-  align-items:center;
+  
   color: #878a8f;
   letter-spacing: normal;
   margin-left:12%;
   transition:all 2s;
+  position:relative;
   opacity:${props=>props.state?'1':'0'};
+
 `
 const H4 = styled.h4`
   font-weight: 800;
