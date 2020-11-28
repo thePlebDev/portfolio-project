@@ -54,7 +54,7 @@ const ArticleCard =({image=defaultImage,title=defaultTitle,filters=defaultFilter
   return(
     <Container>
       <img data-testid='image'  style={{height:'200px',width:'350px'}} src={image} alt='city' />
-      <Filter filters={filters} setBlogState={setBlogState} blogState={blogState}/>
+      
       <Title data-testid='title' >{title}</Title>
       <Description data-testid='description' >{description}</Description>
       <Link to={`/blog/${id}`}>

@@ -33,9 +33,6 @@ const SearchArticles =({title,description,filters,id})=>{
           {title}
         </Title>
       </Link>
-        <Filter>
-          {filters}
-        </Filter>
         <Description>
           {description}
         </Description>

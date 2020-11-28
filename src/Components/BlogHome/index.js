@@ -6,6 +6,7 @@ import axiosUtil from '../../utils/AxiosUtil'
 
 import ArticleCard from '../ArticleCard';
 import useApiCall from '../../Hooks/useApiCall'
+import Loader from '../Loader';
 
 
 const  Container= styled.div`
@@ -39,6 +40,7 @@ const ArticleContainer = styled.div`
 const BlogHome =({apiHook=useApiCall})=>{
   const {state,setState} = apiHook(axiosUtil.get,'/v1/blog/all')
   //const [blogState,setBlogState] = useState(state)
+  console.log(state)
 
   // useEffect(()=>{
   //   if(state){
@@ -54,10 +56,10 @@ const BlogHome =({apiHook=useApiCall})=>{
           state
             ?
           state.posts.map((item,index)=>{
-            return <ArticleCard key={item._id} id={item._id} setBlogState={setState} blogState={state} key={index} image={item.image} filters={item.filters} title={item.title} description={item.description} />
+            return <ArticleCard key={item._id} id={item._id} setBlogState={setState} blogState={state} image={item.image} filters={item.filters} title={item.title} description={item.description} />
           })
           :
-          ''
+          <Loader/>
         }
       </ArticleContainer>
     </Container>

@@ -1,13 +1,14 @@
-import React,{useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import ReactMarkdown from 'react-markdown'
-import axios from 'axios';
+
 
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 import useApiCall from '../../Hooks/useApiCall'
 import axiosUtil from '../../utils/AxiosUtil'
+import Loader from '../Loader'
 
 const Container = styled.div`
   width:70%;
@@ -25,8 +26,6 @@ text-align:center;
 margin-top:20px;
 font-size:1.2rem;
 `
-
-
 
 const ArticleCardIndiv = ({match})=>{
 let id = match.params.id
@@ -54,7 +53,7 @@ const renderers = {
               <ReactMarkdown renderers={renderers} children={state.posts.body} />
             </div>
             :
-        <h1>state is not here</h1>
+        <Loader/>
       }
     </Container>
   )
