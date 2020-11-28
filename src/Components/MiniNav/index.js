@@ -45,11 +45,6 @@ const MiniNav =()=>{
       <Link to="/">
         <Text>Home</Text>
       </Link>
-      <a href="#projects">
-        <Link to="/projects">
-            <Text>Projects</Text>
-        </Link>
-      </a>
       <Link to="/blog">
         <Text>Blog</Text>
       </Link>

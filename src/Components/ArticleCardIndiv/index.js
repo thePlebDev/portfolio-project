@@ -19,6 +19,7 @@ const Text = styled.div `
   font-weight:500;
   text-align:center;
   margin-top:20px;
+  margin-bottom:50px;
 `
 const Filter = styled.div`
 font-weight:500;
@@ -49,7 +50,6 @@ const renderers = {
             ?
             <div>
               <Text>{state.posts.title}</Text>
-              <Filter>{state.posts.filters}</Filter>
               <ReactMarkdown renderers={renderers} children={state.posts.body} />
             </div>
             :
