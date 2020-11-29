@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the MiniNav component should test the snapshot 1`] = `
+<div
+  className="sc-bdnylx dnqPyt"
+>
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    <span
+      className="sc-gtssRu bZyBwx"
+      data-testid="home"
+    >
+      Home
+    </span>
+  </a>
+  <a
+    href="/blog"
+    onClick={[Function]}
+  >
+    <span
+      className="sc-gtssRu bZyBwx"
+      data-testid="blog"
+    >
+      Blog
+    </span>
+  </a>
+</div>
+`;

@@ -43,10 +43,10 @@ const MiniNav =()=>{
   return(
     <Container>
       <Link to="/">
-        <Text>Home</Text>
+        <Text data-testid="home">Home</Text>
       </Link>
-      <Link to="/blog">
-        <Text>Blog</Text>
+      <Link  to="/blog">
+        <Text data-testid="blog">Blog</Text>
       </Link>
     </Container>
   )

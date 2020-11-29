@@ -45,7 +45,7 @@ const NavBar =({state,setState,setShow})=>{
   return(
     <Container>
         <Text>
-            <h2>Tristan Elliott</h2>
+            <h2>Web Development</h2>
         </Text>
         <IconContainer>
           <a href="https://www.youtube.com/channel/UCc9o1zG46k4voqOT7C6Ankw" target="_blank" rel="noreferrer noopener">
