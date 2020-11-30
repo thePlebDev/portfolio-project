@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the SearchResults component should render the snapshot 1`] = `
+<div
+  className="sc-eCApGN bQOiQb"
+>
+  <div
+    className="sc-gKAblj elFhul"
+  >
+    Articles
+  </div>
+  <div
+    className="sc-jSFkmK eiJvjg"
+  >
+    <div
+      data-testid="searchResultsFalse"
+      style={
+        Object {
+          "fontSize": "30px",
+          "margin": "10px",
+          "textAlign": "center",
+        }
+      }
+    >
+      No articles found
+    </div>
+  </div>
+</div>
+`;

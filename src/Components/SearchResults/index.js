@@ -1,7 +1,9 @@
 import React,{useEffect,useState} from 'react'
 import styled from 'styled-components'
 
-import SearchArticles from '../SearchArticles'
+import SearchArticles from '../SearchArticles';
+
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
   border:1px solid green;
@@ -36,7 +38,6 @@ const Text = styled.div`
 `
 
 const SearchResults =({searchResults})=>{
-
   return(
     <Container>
       <Text>Articles</Text>
@@ -45,14 +46,23 @@ const SearchResults =({searchResults})=>{
               searchResults && searchResults.length !== 0
                 ?
                 searchResults.map((item)=>{
-                  return <SearchArticles key={item._id} id={item._id} title={item.title} description={item.description} filters={item.filters}/>
+                  return <SearchArticles data-testid="searchResultsTrue" key={item._id} id={item._id} title={item.title} description={item.description} filters={item.filters}/>
                 })
                 :
-                <div style={{textAlign:'center',fontSize:'30px',margin:'10px'}}>No articles found</div>
+                <div data-testid="searchResultsFalse" style={{textAlign:'center',fontSize:'30px',margin:'10px'}}>No articles found</div>
             }
         </Articles>
     </Container>
   )
 }
+
+SearchResults.propTypes={
+  searchResults: PropTypes.array
+}
+
+SearchResults.defaultProps={
+  searchResults:[]
+}
+
 
 export default SearchResults
