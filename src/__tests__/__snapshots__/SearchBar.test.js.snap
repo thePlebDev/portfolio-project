@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the SearchBar component should test the snapshot 1`] = `
+<div
+  className="sc-pNWxx jSDNas"
+>
+  <div
+    data-testid="showFalse"
+  />
+</div>
+`;
