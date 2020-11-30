@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the SearchArticles component should test the snapshot 1`] = `
+<div
+  className="sc-bdnylx cmxPiG"
+>
+  <a
+    href="/blog/Enter id prop"
+    onClick={[Function]}
+  >
+    <div
+      className="sc-gtssRu cCDtkl"
+      data-testid="title"
+    >
+      Enter a title prop
+    </div>
+  </a>
+  <div
+    className="sc-dlnjPT dukkMK"
+    data-testid="description"
+  >
+    Enter a description prop
+  </div>
+</div>
+`;

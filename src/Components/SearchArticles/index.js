@@ -29,15 +29,21 @@ const SearchArticles =({title,description,filters,id})=>{
   return(
     <Container >
       <Link to={`/blog/${id}`}>
-        <Title>
+        <Title data-testid="title">
           {title}
         </Title>
       </Link>
-        <Description>
+        <Description data-testid="description">
           {description}
         </Description>
     </Container>
   )
+}
+
+SearchArticles.defaultProps = {
+  title:'Enter a title prop',
+  description:'Enter a description prop',
+  id:'Enter id prop'
 }
 
 export default SearchArticles
