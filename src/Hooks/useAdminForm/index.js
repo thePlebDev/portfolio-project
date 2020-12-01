@@ -2,12 +2,14 @@ import React,{useState,useEffect} from 'react';
 import {url} from '../../utils/Constants'
 
 const useAdminForm =(validation,axiosCall)=>{
+//BEFORE MAKING CHANGES PLEASE MAKE SURE THAT YOU ARE NOT GOING TO BREAK THE TESTS
+
 
   const [state,setState] = useState({username:'',password:''})
   const [errors,setErrors] = useState({})
   const [isSubmitting,setIsSubmitting] = useState(false)
   const [redirect,setRedirect] = useState(false)
- 
+
   const handleChange =(e)=>{
     const {name,value} = e.target
     setState({...state,[name]:value})
