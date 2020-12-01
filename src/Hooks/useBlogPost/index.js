@@ -3,7 +3,7 @@ import axiosUtil from '../../utils/AxiosUtil';
 import axios from 'axios'
 
 
-const useBlogPost =(validation,id)=>{
+const useBlogPost =(axiosCall,validation,id)=>{
   const [state,setState] = useState({imageLink:'',title:'',description:'',filters:'',body:''})
   const [errors,setErrors] = useState({})
   const [isSubmitting,setIsSubmitting] = useState(false)
@@ -23,13 +23,13 @@ const useBlogPost =(validation,id)=>{
   useEffect(()=>{
     if(isSubmitting && Object.keys(errors).length ===0 ){
       console.log('api call')
-      axios.post('http://localhost:3000/v1/blog/new',
+      axiosCall('/v1/blog/new',
       {image:state.imageLink,title:state.title,description:state.description,filters:state.filters,body:state.body})
         .then(data=> console.log(data.data))
-        .catch(error => console.log('error --> ' +error))
+        .catch(error => console.log('error --> ' +  error))
     }
     setIsSubmitting(false)
-  },[errors,isSubmitting,id])
+  },[errors,isSubmitting,id,axiosCall,state])
 
   return{
     state,

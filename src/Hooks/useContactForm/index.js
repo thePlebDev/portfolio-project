@@ -13,7 +13,7 @@ const useContactForm = (validation)=>{
   }
 
   useEffect(()=>{
-    if(isSubmitting && Object.keys(errors).length ===0){
+    if(isSubmitting && Object.keys(errors).length === 0){
       setStatus(true);
       setIsSubmitting(false)
     }
@@ -23,7 +23,7 @@ const useContactForm = (validation)=>{
   const handleSubmit =(e)=>{
     setIsSubmitting(true)
     setErrors(validation(state))
-    console.log(errors)
+  //console.log(errors)
     e.preventDefault()
 
   }

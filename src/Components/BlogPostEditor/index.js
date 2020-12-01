@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import styled from 'styled-components';
+import axiosUtil from '../../utils/AxiosUtil';
 
 import Form from '../Form'
 import AdminTextInput from '../AdminTextInput';
@@ -17,7 +18,7 @@ const Container = styled.div`
 `
 
 const BlogPostEditor =({useApiCal=useBlogPost})=>{
-  const {state,errors,handleChange,handleSubmit} = useApiCal(validation.blogPost)
+  const {state,errors,handleChange,handleSubmit} = useApiCal(axiosUtil.post,validation.blogPost)
 
   return(
     <Container data-testid="container">

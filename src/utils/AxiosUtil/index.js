@@ -21,7 +21,7 @@ let axiosUtil =(function(){
 
     async post(location,obj){
       try{
-        let data = await axios.post(`${location}`, obj, { withCredentials: true })
+        let data = await axios.post(`${url}${location}`, obj, { withCredentials: true })
         return data
       }
       catch(err){
