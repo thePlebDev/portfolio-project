@@ -42,11 +42,6 @@ const BlogHome =({apiHook=useApiCall})=>{
   //const [blogState,setBlogState] = useState(state)
   console.log(state)
 
-  // useEffect(()=>{
-  //   if(state){
-  //     sessionStorage.setItem('posts',JSON.stringify(state.posts))
-  //   }
-  // },[state])
 
   return(
     <Container>

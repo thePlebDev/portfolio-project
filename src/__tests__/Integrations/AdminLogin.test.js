@@ -2,8 +2,8 @@ import React from 'react'
 import { render, screen,fireEvent} from '@testing-library/react';
 import {BrowserRouter as Router} from 'react-router-dom'
 
-import AdminLogin from '../../Components/AdminLogin';
 
+import AdminLogin from '../../Components/AdminLogin';
 //make sure the important stuff renders
 //will have to mock the
 //make sure the events work
@@ -43,19 +43,6 @@ describe('testing the AdminLogin',()=>{
     const { getByTestId } = render(<AdminLogin useHook={useMockHook}/>)
     fireEvent.click(getByTestId('submit'))
     expect(handleSubmit.mock.calls.length).toBe(1)
-  })
-  it('should test the redirect',()=>{
-    const useMockHook = jest.fn(()=>{
-      return{
-        state:{username:'it',password:'be like that'},
-        handleChange:jest.fn(),
-        handleSubmit:jest.fn(),
-        errors:{},
-        redirect:true
-      }
-    })
-    const { getByTestId } = render( <Router><AdminLogin useHook={useMockHook}/></Router>)
-    screen.debug();
   })
 
 

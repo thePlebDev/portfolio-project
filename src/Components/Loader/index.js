@@ -36,7 +36,7 @@ animation: spin 1.2s linear infinite;
 const Loader =()=>{
 
   return(
-    <Spiner/>
+    <Spiner data-testid="loading"/>
 
   )
 }
