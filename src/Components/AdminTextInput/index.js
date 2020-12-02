@@ -15,8 +15,8 @@ const AdminTextInput = ({state="enter state prop",handleChange={function(){conso
 
   return(
     <Container data-testid="container">
-      <label for='username'>
-        <Input id='username' data-testid="input" state={error} name={name} type="text" value={state} onChange={(e)=>handleChange(e)} placeholder={name}/>
+      <label htmlFor='username'>
+        <Input id='username' data-testid="text-input" state={error} name={name} type="text" value={state} onChange={(e)=>handleChange(e)} placeholder={name}/>
       </label>
     </Container>
   )

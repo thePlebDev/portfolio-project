@@ -20,7 +20,7 @@ const AdminPasswordInput = ({state,handleChange,error})=>{
   return(
     <Container data-testid="container">
       <label id="password" >
-        <Input for="password" data-testid="input" state={error} name="password" type="password" value={state} onChange={(e)=>handleChange(e)} placeholder='password'/>
+        <Input htmlFor="password" data-testid="password-input" state={error} name="password" type="password" value={state} onChange={(e)=>handleChange(e)} placeholder='password'/>
       </label>
     </Container>
   )
