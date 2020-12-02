@@ -12,7 +12,7 @@ const TextArea =({state,handleChange,name})=>{
   return(
     <div>
       <label>
-        <Body name={name} onChange={(e)=>handleChange(e)} value={state}/>
+        <Body name={name} data-testid="textarea" onChange={(e)=>handleChange(e)} value={state}/>
       </label>
     </div>
   )
