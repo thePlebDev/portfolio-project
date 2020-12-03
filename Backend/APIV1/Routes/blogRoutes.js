@@ -1,5 +1,6 @@
 const express = require("express");
 const BlogPost = require('../Models/blogPost')
+const blogService = require('../Services/BlogService')
 
 
 const blog = express.Router();
@@ -18,9 +19,10 @@ function ensureAuthentication(req,res,next){
 }
 
 blog.get('/all',async (req,res)=>{
+  //let posts = await BlogPost.find({})
 
-  let posts = await BlogPost.find({}) // moved to data access layer inside of subscriber
-  res.json({status:200,posts:posts})
+  let data = await blogService.allPosts()
+  res.json({status:200,posts:data})
 })
 
 blog.post('/new',ensureAuthentication,async(req,res,next)=>{
