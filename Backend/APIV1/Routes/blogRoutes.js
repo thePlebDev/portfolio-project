@@ -26,18 +26,11 @@ blog.get('/all',async (req,res,next)=>{
 })
 
 blog.post('/new',ensureAuthentication,async(req,res,next)=>{
+  
   const {image,filters,title,description,body} = req.body
-  const newBlogPost = new BlogPost({// moved to data access layer inside of subscriber
-    image,
-    filters,
-    title,
-    description,
-    body
-  })
-  newBlogPost.save(function(err){// moved to data access layer inside of subscriber
-    if(err) return next(err)
-    res.json({status:200,message:'Blog Post created'})
-  })
+  const data = await blogService.newPost(image,filters,title,description,body).catch(next)
+  res.json({status:200,message:data})
+
 })
 
 blog.get('/post',ensureAuthentication,function(req,res){

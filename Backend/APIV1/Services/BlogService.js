@@ -16,7 +16,15 @@ const blogService=(function(){
 
     },
 
-    newPost(){},
+    async newPost(image,filters,title,description,body){
+      try{
+        let data = await blogSubscriber.newPost(image,filters,title,description,body)
+        return data
+      }
+      catch(e){
+        return e
+      }
+    },
 
     SinglePost(){},
   }
