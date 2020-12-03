@@ -19,20 +19,20 @@ function ensureAuthentication(req,res,next){
 
 blog.get('/all',async (req,res)=>{
 
-  let posts = await BlogPost.find({})
+  let posts = await BlogPost.find({}) // moved to data access layer inside of subscriber
   res.json({status:200,posts:posts})
 })
 
 blog.post('/new',ensureAuthentication,async(req,res,next)=>{
   const {image,filters,title,description,body} = req.body
-  const newBlogPost = new BlogPost({
+  const newBlogPost = new BlogPost({// moved to data access layer inside of subscriber
     image,
     filters,
     title,
     description,
     body
   })
-  newBlogPost.save(function(err){
+  newBlogPost.save(function(err){// moved to data access layer inside of subscriber
     if(err) return next(err)
     res.json({status:200,message:'Blog Post created'})
   })
@@ -44,7 +44,7 @@ blog.get('/post',ensureAuthentication,function(req,res){
 
 blog.get('/single', async (req,res,next)=>{
   const {obj} = req.query
-    let posts =  await BlogPost.findById(obj).exec().catch(next)
+    let posts =  await BlogPost.findById(obj).exec().catch(next)// moved to data access layer inside of subscriber
     res.json({status:200,posts})
 
 
