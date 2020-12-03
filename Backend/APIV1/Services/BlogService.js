@@ -13,7 +13,6 @@ const blogService=(function(){
       catch(e){
         return e
       }
-
     },
 
     async newPost(image,filters,title,description,body){
@@ -26,7 +25,15 @@ const blogService=(function(){
       }
     },
 
-    SinglePost(){},
+   async singlePost(id){
+      try{
+        let data = await blogSubscriber.singlePost(id)
+        return data
+      }
+      catch(e){
+        return e
+      }
+    },
   }
 }());
 

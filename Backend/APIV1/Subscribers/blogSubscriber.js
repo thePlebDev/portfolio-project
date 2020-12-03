@@ -30,7 +30,16 @@ const BlogPost = require('../Models/blogPost.js')
       }
     },
 
-    SinglePost(){}
+  async singlePost(id){
+    try{
+      let posts =  await BlogPost.findById(id).exec()
+      return posts
+    }
+    catch(e){
+      return e
+    }
+
+    }
   }
 
 }())

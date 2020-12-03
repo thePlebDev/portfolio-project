@@ -26,7 +26,7 @@ blog.get('/all',async (req,res,next)=>{
 })
 
 blog.post('/new',ensureAuthentication,async(req,res,next)=>{
-  
+
   const {image,filters,title,description,body} = req.body
   const data = await blogService.newPost(image,filters,title,description,body).catch(next)
   res.json({status:200,message:data})
@@ -39,8 +39,9 @@ blog.get('/post',ensureAuthentication,function(req,res){
 
 blog.get('/single', async (req,res,next)=>{
   const {obj} = req.query
-    let posts =  await BlogPost.findById(obj).exec().catch(next)// moved to data access layer inside of subscriber
-    res.json({status:200,posts})
+  //  let posts =  await BlogPost.findById(obj).exec().catch(next)// moved to data access layer inside of subscriber
+  const data = await blogService.singlePost(obj)
+    res.json({status:200,data})
 
 
 })
