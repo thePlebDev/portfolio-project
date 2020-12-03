@@ -33,17 +33,14 @@ blog.post('/new',ensureAuthentication,async(req,res,next)=>{
 
 })
 
-blog.get('/post',ensureAuthentication,function(req,res){
-  res.json({status:200,message:'we have access to this route'})
-})
-
 blog.get('/single', async (req,res,next)=>{
   const {obj} = req.query
-  //  let posts =  await BlogPost.findById(obj).exec().catch(next)// moved to data access layer inside of subscriber
-  const data = await blogService.singlePost(obj)
-    res.json({status:200,data})
+  const data = await blogService.singlePost(obj).catch(next)
+  res.json({status:200,data})
+})
 
-
+blog.get('/post',ensureAuthentication,function(req,res){
+  res.json({status:200,message:'we have access to this route'})
 })
 
 module.exports = blog
