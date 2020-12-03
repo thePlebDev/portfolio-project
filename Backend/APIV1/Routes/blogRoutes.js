@@ -18,11 +18,11 @@ function ensureAuthentication(req,res,next){
     }
 }
 
-blog.get('/all',async (req,res)=>{
-  //let posts = await BlogPost.find({})
+blog.get('/all',async (req,res,next)=>{
 
-  let data = await blogService.allPosts()
+  let data = await blogService.allPosts().catch(next)
   res.json({status:200,posts:data})
+
 })
 
 blog.post('/new',ensureAuthentication,async(req,res,next)=>{

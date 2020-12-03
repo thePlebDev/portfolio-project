@@ -4,8 +4,13 @@ const BlogPost = require('../Models/blogPost.js')
 
   return{
     async allPosts(){
-      let data = await BlogPost.find({})
-      return data
+      try{
+        let data = await BlogPost.find({})
+        return data
+      }
+      catch(e){
+        return e
+      }
     },
 
     newPost(){},

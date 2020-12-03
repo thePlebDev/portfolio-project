@@ -6,8 +6,14 @@ const blogService=(function(){
 
   return{
     async allPosts(){
-      let data = await blogSubscriber.allPosts()
-      return data
+      try{
+        let data = await blogSubscriber.allPosts()
+        return data
+      }
+      catch(e){
+        return e
+      }
+
     },
 
     newPost(){},
