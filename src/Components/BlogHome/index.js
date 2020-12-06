@@ -1,18 +1,20 @@
 import React,{useState,useEffect} from 'react';
 import styled from 'styled-components';
+import {CSSTransition,TransitionGroup} from 'react-transition-group'
 
 import axiosUtil from '../../utils/AxiosUtil'
+
 
 
 import ArticleCard from '../ArticleCard';
 import useApiCall from '../../Hooks/useApiCall'
 import Loader from '../Loader';
+import './index.css'
 
 
 const  Container= styled.div`
   position:relative;
 `
-
 
 const H1 = styled.h1`
   opacity:0.7;
@@ -46,17 +48,21 @@ const BlogHome =({apiHook=useApiCall})=>{
   return(
     <Container>
       <H1>Articles</H1>
+      <TransitionGroup>
       <ArticleContainer data-testid="container">
         {
           state
             ?
           state.posts.map((item,index)=>{
-            return <ArticleCard key={item._id} id={item._id} setBlogState={setState} blogState={state} image={item.image} filters={item.filters} title={item.title} description={item.description} />
+            return <CSSTransition key={item._id} timeout={500} classNames="item" in={true}>
+                      <ArticleCard  id={item._id} setBlogState={setState} blogState={state} image={item.image} filters={item.filters} title={item.title} description={item.description} />
+                   </CSSTransition>
           })
           :
           <Loader/>
         }
-      </ArticleContainer>
+        </ArticleContainer>
+        </TransitionGroup>
     </Container>
   )
 }

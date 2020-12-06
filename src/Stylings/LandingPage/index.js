@@ -15,14 +15,15 @@ const Title = styled.h1`
   margin-top:0;
   font-weight: 800;
   letter-spacing: -.01em;
-  color: #0f141e;
+  color: ${({theme})=>theme.text};
   margin-left:12%;
   transition:all 2s;
   opacity:${props=>props.state?'1':'0'};
+
 `
 const About = styled.h3`
   font-weight: 500;
-  
+
   color: #878a8f;
   letter-spacing: normal;
   margin-left:12%;

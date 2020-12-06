@@ -16,6 +16,7 @@ import {lightTheme, darkTheme} from '../../Stylings/Themes/darkMode';
 import { ThemeProvider } from 'styled-components';
 
 import useSessionStorageHook from '../../Hooks/useSessionStorageHook'
+import useThemeHook from '../../Hooks/useThemeHook'
 import sessionUtils from '../../utils/WindowSessions'
 
 
@@ -23,7 +24,9 @@ import sessionUtils from '../../utils/WindowSessions'
 const App =()=>{
   const [state,setState] = useState(false)
   const [show,setShow] = useState(false)
-  const [theme,setTheme] = useState(sessionUtils.sessionStorage())
+  const [theme,setTheme] = useState(sessionUtils.sessionStorage()) // 90% sure this is not good code
+  //above should probably be a custom hook
+//const {theme,setTheme} = useThemeHook(sessionUtils.sessionStorage)
   useSessionStorageHook()
 
   return(

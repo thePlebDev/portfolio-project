@@ -117,10 +117,7 @@ const NavBar =({setShow,setTheme,theme})=>{
 
               <Switch htmlFor="theme">
                 <Checkbox id="theme" type="checkbox" onClick={()=>{themeSetter()}}/>
-                <Slider state={theme}>
-                
-                </Slider>
-
+                <Slider state={theme}></Slider>
               </Switch>
 
 
