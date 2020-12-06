@@ -28,7 +28,7 @@ const Container = styled.div`
 `
 const Text = styled.div`
   font-size:1.4rem;
-  color: rgba(0, 0, 0, 0.75);
+  color: ${({theme})=>theme.text};
   text-transform: uppercase;
   cursor:pointer;
 `
@@ -36,6 +36,11 @@ const IconContainer = styled.div`
   display:flex;
   align-items:center;
   justify-content:center;
+`
+
+
+const IconStyle = styled.span`
+  color:${({theme})=>theme.text}
 `
 
 
@@ -61,16 +66,24 @@ const NavBar =({setShow,setTheme,theme})=>{
         </Text>
         <IconContainer>
           <a href="https://www.youtube.com/channel/UCc9o1zG46k4voqOT7C6Ankw" data-testid="link" target="_blank" rel="noreferrer noopener">
-            <YouTubeIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
+            <IconStyle>
+              <YouTubeIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
+            </IconStyle>
           </a>
             <a href="https://twitter.com/Tristanthewebd1" target="_blank" data-testid="link" rel="noreferrer noopener">
-              <TwitterIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
+              <IconStyle>
+                <TwitterIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
+              </IconStyle>
             </a>
             <a href="https://github.com/thePlebDev" target="_blank" data-testid="link" rel="noreferrer noopener">
-              <GitHubIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
+              <IconStyle>
+                <GitHubIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
+              </IconStyle>
             </a>
             <div>
-              <SearchIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}} data-testid="search" onClick={()=>setShow(true)}/>
+              <IconStyle>
+                <SearchIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}} data-testid="search" onClick={()=>setShow(true)}/>
+              </IconStyle>
             </div>
             <div>
               <button style={{cursor:'pointer'}} onClick={()=>{themeSetter()}}>Change theme</button>

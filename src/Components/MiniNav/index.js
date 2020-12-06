@@ -12,7 +12,7 @@ const Text = styled.span`
 padding:10px;
 font-size:25px;
 text-transform:uppercase;
-opacity:0.6;
+color:${({theme})=>theme.text};
 cursor:pointer;
 position:relative;
 
