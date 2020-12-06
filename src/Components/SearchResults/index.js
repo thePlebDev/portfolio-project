@@ -13,6 +13,7 @@ const Container = styled.div`
 const Articles = styled.div`
   broder:1px solid blue;
   background-color:#FDFDFD;
+
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
   grid-gap:2rem;

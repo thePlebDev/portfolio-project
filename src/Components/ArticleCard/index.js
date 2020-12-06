@@ -37,6 +37,7 @@ const Title = styled.div`
 const ReadMore = styled.div`
   font-size: 0.75rem;
   cursor:pointer;
+  color:${({theme})=>theme.text};
 
 `
 
@@ -54,7 +55,7 @@ const ArticleCard =({image=defaultImage,title=defaultTitle,filters=defaultFilter
   return(
     <Container>
       <img data-testid='image'  style={{height:'200px',width:'350px'}} src={image} alt='city' />
-      
+
       <Title data-testid='title' >{title}</Title>
       <Description data-testid='description' >{description}</Description>
       <Link to={`/blog/${id}`}>

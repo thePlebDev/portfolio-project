@@ -14,13 +14,14 @@ const Input = styled.input`
   padding:10px;
   margin:0 auto;
   font-size:1.5rem;
+
 `
 
 const SearchInput=({state,handleChange,setShow})=>{
   return(
     <Label >
       <Input data-testid="input" type="text" placeholder='Search blog posts...' onChange={(e)=>{handleChange(e)}} value={state} name="search" />
-      <HighlightOffIcon data-testid="close" style={{position:'absolute',top:'25%',right:'5%','z-index':999,cursor:'pointer'}} onClick={()=>setShow(false)}/>
+      <HighlightOffIcon data-testid="close" style={{position:'absolute',top:'25%',right:'5%','z-index':999,cursor:'pointer',color:'black'}} onClick={()=>setShow(false)}/>
     </Label>
   )
 }
