@@ -7,6 +7,16 @@ import Filter from '../Filters'
 const Container = styled.div`
 text-align:center;
 margin-bottom:20px;
+padding-top:20px;
+transition:all .5s;
+box-shadow:0 1px 2px 0 rgba(0,0,0,0.5);
+border-radius:4px;
+cursor:pointer;
+
+&:hover{
+  box-shadow:0 2px 20px 0 rgba(0,0,0,0.25);
+  transform:translateY(-5px);
+}
 `
 
 const Description = styled.div`
