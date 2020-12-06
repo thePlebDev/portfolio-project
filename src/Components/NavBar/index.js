@@ -42,8 +42,37 @@ const IconContainer = styled.div`
 const IconStyle = styled.span`
   color:${({theme})=>theme.text}
 `
+const Switch = styled.label`
+  position:relative;
+  display:block;
+  width:60px;
+  height:30px;
 
+`
 
+const Checkbox = styled.input`
+
+`
+const Slider = styled.span`
+position:absolute;
+cursor:pointer;
+top:0; left:0; right:0; bottom:0;
+background:${({theme})=>theme.text};
+transition:.25s;
+border-radius:10%;
+
+&:before{
+  content:'';
+  position:absolute;
+  border-radius:10%;
+  transition:.2s all linear;
+  transform:${({state})=>state ? 'translateX(4px)':'translateX(-30px)'};
+  width:43%;
+  height:100%;
+  background-color:red;
+}
+
+`
 
 const NavBar =({setShow,setTheme,theme})=>{
 
@@ -85,9 +114,16 @@ const NavBar =({setShow,setTheme,theme})=>{
                 <SearchIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}} data-testid="search" onClick={()=>setShow(true)}/>
               </IconStyle>
             </div>
-            <div>
-              <button style={{cursor:'pointer'}} onClick={()=>{themeSetter()}}>Change theme</button>
-            </div>
+
+              <Switch htmlFor="theme">
+                <Checkbox id="theme" type="checkbox" onClick={()=>{themeSetter()}}/>
+                <Slider state={theme}>
+                
+                </Slider>
+
+              </Switch>
+
+
         </IconContainer>
     </Container>
   )
