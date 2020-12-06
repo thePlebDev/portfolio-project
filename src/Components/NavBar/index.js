@@ -40,7 +40,19 @@ const IconContainer = styled.div`
 
 
 
-const NavBar =({setShow})=>{
+const NavBar =({setShow,setTheme,theme})=>{
+
+  const themeSetter = ()=>{
+    setTheme(!theme)
+    let data = sessionStorage.getItem('theme');
+    if(!data){
+      sessionStorage.setItem('theme','dark')
+
+    }else{
+      sessionStorage.removeItem('theme')
+    }
+  }
+
 
   return(
     <Container>
@@ -59,6 +71,9 @@ const NavBar =({setShow})=>{
             </a>
             <div>
               <SearchIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}} data-testid="search" onClick={()=>setShow(true)}/>
+            </div>
+            <div>
+              <button style={{cursor:'pointer'}} onClick={()=>{themeSetter()}}>Change theme</button>
             </div>
         </IconContainer>
     </Container>

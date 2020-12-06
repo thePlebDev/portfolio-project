@@ -49,8 +49,8 @@ const renderers = {
         state
             ?
             <div>
-              <Text>{state.posts.title}</Text>
-              <ReactMarkdown renderers={renderers} children={state.posts.body} />
+              <Text>{state.data.title}</Text>
+              <ReactMarkdown renderers={renderers} children={state.data.body} />
             </div>
             :
         <Loader/>

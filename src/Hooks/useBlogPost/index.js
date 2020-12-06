@@ -1,6 +1,4 @@
-import React,{useState,useEffect} from 'react';
-import axiosUtil from '../../utils/AxiosUtil';
-import axios from 'axios'
+import {useState,useEffect} from 'react';
 
 
 const useBlogPost =(axiosCall,validation,id)=>{
