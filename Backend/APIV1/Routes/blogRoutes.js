@@ -1,5 +1,4 @@
 const express = require("express");
-const BlogPost = require('../Models/blogPost')
 const blogService = require('../Services/BlogService')
 
 

@@ -1,5 +1,4 @@
 const express = require('express')
-const User = require('../Models/User.js')
 const passport = require('passport');
 const userService = require('../Services/userService')
 
