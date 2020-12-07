@@ -42,12 +42,12 @@ const Button = styled.div`
 
 
 
-const Crypto =()=>{
+const Crypto =({handleChange})=>{
   return(
     <Container>
         <h1>Block Chain</h1>
       <MineContainer>
-         <Button></Button>
+         <Button role="button" onClick={()=>handleChange()}></Button>
          <span>
             <BuildIcon style={{fontSize:'60px',marginLeft:'20px'}}/>
          </span>
