@@ -45,6 +45,9 @@ const MiniNav =()=>{
       <Link to="/">
         <Text data-testid="home">Home</Text>
       </Link>
+      <Link  to="/crypto">
+        <Text data-testid="crypto">Crypto</Text>
+      </Link>
       <Link  to="/blog">
         <Text data-testid="blog">Blog</Text>
       </Link>

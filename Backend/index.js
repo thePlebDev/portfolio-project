@@ -25,7 +25,4 @@ app.use((error,req,res,next)=>{
   return res.status(500).json({error:error.toString()});
 })
 
-const port = 3000
-app.listen(port,()=>{
-  console.log(`listening at http://localhost${port}`)
-})
+module.exports = app

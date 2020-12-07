@@ -8,6 +8,7 @@ import BlogHome from '../BlogHome';
 import AdminLogin from '../AdminLogin';
 import BlogPostEditor from '../BlogPostEditor';
 import ArticleCardIndiv from '../ArticleCardIndiv';
+import Crypto from '../Crypto'
 import SearchBar from '../SearchBar';
 import GlobalStyle from '../../Stylings/Global'
 import {lightTheme, darkTheme} from '../../Stylings/Themes/darkMode';
@@ -41,6 +42,7 @@ const App =()=>{
         <Route exact path="/blog/admin" component={AdminLogin} />
         <Route exact path="/blog/admin/post" component={BlogPostEditor} />
         <Route exact path="/blog/:id" component={ArticleCardIndiv} />
+        <Route exact path="/crypto" component={Crypto} />
       </Switch>
     </ThemeProvider>
   )
