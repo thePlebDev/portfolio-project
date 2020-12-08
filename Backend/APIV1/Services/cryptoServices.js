@@ -8,7 +8,7 @@ const cryptoService = (function(){
   return{
 
     async getLatestBlock(){},
-    
+
     async getBlockChain(){},
 
     async addBlock(){},

@@ -8,6 +8,8 @@ const BlockChainSchema = mongoose.Schema({
 
 })
 
-const BlockChain = mongoose.model('BlockChain',BlockChainSchema)
+// I will create a post middleware hook for a genesisBlock
+
+const BlockChain = mongoose.model('BlockChain',BlockChainSchema) //this is the model compiled
 
 module.exports = BlockChain

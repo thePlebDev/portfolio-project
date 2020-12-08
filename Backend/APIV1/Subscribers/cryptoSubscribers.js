@@ -1,4 +1,5 @@
-
+const BlockChain = require('../Models/BlockChain.js')
+const Block = require('../Models/Block')
 
 const cryptoSubscriber=(function(){
 
@@ -7,7 +8,13 @@ const cryptoSubscriber=(function(){
     getLatestBlock(){},
     getBlockChain(){},
     addBlock(){},
-    createBlockChain(){}
+    async createBlockChain(){
+      const chain = await BlockChain.create({
+        chain:[]
+      })
+      let data = chain.save()
+      return data
+    }
   }
 }())
 

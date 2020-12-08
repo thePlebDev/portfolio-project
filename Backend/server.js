@@ -9,7 +9,7 @@ async function startServer(){
       console.log(err);
       return
     }
-
+    console.log('listening on port ---->' + port)
     console.log('your server is ready !')
   })
 }
