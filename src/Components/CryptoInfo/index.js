@@ -1,12 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const Container = styled.div`
+   display:grid;
+   align-items:center;
+   grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+`
+
 
 const CryptoContainer = styled.div`
-  border:1px solid red;
   display:flex;
   align-items:center;
-  justify-content:flex-start;
+  justify-content:center;
+  margin-top:20px;
+
 `
 const Title = styled.h1`
   margin-left:20px;
@@ -29,18 +36,22 @@ const CryptoInfo =({logo,name,symbol,price})=>{
 
 
   return(
-    <div>
+    <Container>
       <CryptoContainer>
-      <img src={logo} style={{marginLeft:'20px'}} alt='Crypto logo' width="32" height="32"/>
-      <Title>{name}</Title>
-      <Symbol>({symbol})</Symbol>
+          <img src={logo} style={{marginLeft:'20px'}} alt='Crypto logo' width="32" height="32"/>
+          <Title>{name}</Title>
+          <Symbol>({symbol})</Symbol>
       </CryptoContainer>
-      <div style={{marginTop:'10px'}}>
-      <Price>${price}</Price>
-      <Symbol>USD</Symbol>
+
+      <div style={{textAlign:'center',marginTop:'20px'}}>
+        <Price>${price}</Price>
+        <Symbol>USD</Symbol>
       </div>
 
-    </div>
+      <div>
+
+      </div>
+    </Container>
   )
 }
 
