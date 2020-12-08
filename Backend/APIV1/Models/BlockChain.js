@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+//const cryptoSubscriber = require('../Subscribers/cryptoSubscribers')
+const cryptoSubscriber = require('../Subscribers/cryptoSubscribers')
 
 
 
@@ -8,7 +10,6 @@ const BlockChainSchema = mongoose.Schema({
 
 })
 
-// I will create a post middleware hook for a genesisBlock
 
 const BlockChain = mongoose.model('BlockChain',BlockChainSchema) //this is the model compiled
 

@@ -1,7 +1,9 @@
-import React,{useEffect} from 'react';
-import styled from 'styled-components'
-import axios from 'axios'
+import React,{useEffect,useState} from 'react';
+import styled from 'styled-components';
 import BuildIcon from '@material-ui/icons/Build';
+
+import Block from '../../utils/BlockChain/block.js';
+import BlockChain from '../../utils/BlockChain/chain.js';
 
 
 const Container = styled.div`
@@ -19,38 +21,38 @@ const MineContainer = styled.div`
 const Button = styled.div`
   height:90px;
   width:90px;
-  border-radius:50%;
   background-color:red;
   position:relative;
   cursor:pointer;
   transition:all .25s linear;
   box-shadow:1px 1px 8px rgba(0,0,0,0.5);
 
-  &:hover{
-    transform:translateY(-5px);
-    box-shadow:1px 1px 20px rgba(0,0,0,0.5);
-  }
-
-  &:before{
-    content:'add';
-    font-size:30px;
-    position:absolute;
-    bottom:0; left:0; right:0; top:30%;
-    margin:0 auto;
-  }
 `
 
-
-
 const Crypto =({handleChange})=>{
+  const [block,setBlock] = useState('')
+  const [chain,setChain] = useState('')
+  const handleClick=()=>{
+    if(!chain){
+      let chain = new BlockChain
+      chain.createGenesisBlock()
+      setChain(chain)
+    }else{
+      chain.addBlock(new Block(1,chain.chain.length-1,Date.now(),{amount:4}))
+      console.log(chain)
+    }
+
+  }
+
   return(
     <Container>
         <h1>Block Chain</h1>
       <MineContainer>
-         <Button role="button" onClick={()=>handleChange()}></Button>
+         <Button role="button" onClick={()=>handleClick()}>Add block</Button>
          <span>
             <BuildIcon style={{fontSize:'60px',marginLeft:'20px'}}/>
          </span>
+         {}
       </MineContainer>
     </Container>
   )

@@ -14,6 +14,10 @@ const cryptoSubscriber=(function(){
       })
       let data = chain.save()
       return data
+    },
+    async createGenesisBlock(id){
+      const findings = await BlockChain.find({})
+      return findings
     }
   }
 }())

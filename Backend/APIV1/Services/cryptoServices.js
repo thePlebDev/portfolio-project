@@ -22,6 +22,15 @@ const cryptoService = (function(){
         return e
       }
 
+    },
+    async createGenesisBlock(){
+      try{
+        let data = await cryptoSubscriber.createGenesisBlock()
+        return data
+      }
+      catch(e){
+        return e
+      }
     }
   }
 }())
