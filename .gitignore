@@ -9,7 +9,7 @@
 #api
 /src/APIKeys
 .env
-
+./src/constants
 # testing
 /coverage
 

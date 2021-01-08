@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {config} from '../Constants'
-const url ='http://localhost:3000'
+const url ='http://localhost:3001'
 // const instance = axios.create({
 //   withCredentials:true
 // })
@@ -11,7 +11,7 @@ let axiosUtil =(function(){
   return{
     async get(location,obj){
       try{
-        let data = await axios.get(`${config.url.API_URL}${location}`,{params:{obj}}, { withCredentials: true })
+        let data = await axios.get(`${url}${location}`,{params:{obj}},{ crossdomain: true }, { withCredentials: true })
          return data
       }
       catch(err){

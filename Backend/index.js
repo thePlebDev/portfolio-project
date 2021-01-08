@@ -9,7 +9,13 @@ require('dotenv').config(); // gives me access to variable set in the .env file 
 
 
 const app = express()
-app.use(cors({credentials: true,origin: 'http://localhost:3001'}))
+app.use(cors({credentials: true,origin: 'http://localhost:3000'}))
+
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 
 //LOADERS
 setUpPassport()
