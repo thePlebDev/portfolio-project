@@ -14,8 +14,13 @@ const ModalContainer = styled.div`
   display:flex;
   justify-content:center;
   align-items:center;
-
+  transition: all 0.35s;
+  transform:translateY(${({state})=>state ? '-5px' : '5px'});
+  visibility:${({state})=>state ? 'visible' : 'hidden'};
+  opacity:${({state})=>state ? '1' : '0'};
+  z-index:99999999999999999999999;
 `
+
 const ModalSubContainer = styled.div`
   background-color:white;
   height:30%;
@@ -68,17 +73,17 @@ const Close = styled.div`
   cursor:pointer;
 `
 
-const Modal =({state})=>{
+const Modal =({state,setShow})=>{
   return(
 
-    <ModalContainer>
+    <ModalContainer state={state}>
       <ModalSubContainer>
         <div style={{position:'relative'}}>
             <ModalTitle>Pup Spotter</ModalTitle>
             <Description>Dog spotting platform</Description>
             <Tech>React / Node / Express / Mongo </Tech>
             <CodeButton>View Code</CodeButton>
-            <Close> <CloseIcon style={{color:'#e31b6d',fontSize:'40px'}}/></Close>
+            <Close onClick={()=>setShow(false)}> <CloseIcon style={{color:'#e31b6d',fontSize:'40px'}}/></Close>
         </div>
       </ModalSubContainer>
     </ModalContainer>

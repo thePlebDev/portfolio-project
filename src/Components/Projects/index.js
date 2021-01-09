@@ -1,7 +1,9 @@
-import React,{useRef} from 'react';
+import React,{useRef,useState} from 'react';
 import styled from 'styled-components';
 import dogSpotter from '../../Assets/pupFinderPortFolio.png'
 import useHoverHook from '../../Hooks/UseHoverHook';
+
+import Modal from '../Modal'
 
 const ProjectContainer = styled.div`
   width:60%;
@@ -36,7 +38,7 @@ const ImageContainer = styled.div`
 `
 const Title = styled.div`
   position:absolute;
-  background-color:black;
+  background-color:#e31b6d;
   color:white;
   left:${({state})=>state ? '20%': '-120px'};
   border-radius:5px;
@@ -51,16 +53,20 @@ const Title = styled.div`
 
 
 const Project =()=>{
+  const [show,setShow] = useState(false)
   const node = useRef(null)
   const {state} = useHoverHook(node)
 
   return(
+    <>
     <ProjectContainer>
       <ImageContainer ref={node}>
-      <Title state={state} >View Info</Title>
+      <Title state={state} onClick={()=>setShow(true)}>View Info</Title>
         <Image src={dogSpotter}  state={state}/>
       </ImageContainer>
     </ProjectContainer>
+    <Modal state={show} setShow={setShow}/>
+    </>
   )
 }
 

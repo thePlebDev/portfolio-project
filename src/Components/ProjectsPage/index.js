@@ -2,7 +2,6 @@ import React,{useState,useEffect,useRef} from 'react';
 import styled from 'styled-components'
 
 
-import Modal from '../Modal'
 import Project from '../Projects'
 
 
@@ -20,7 +19,6 @@ const ProjectsPage =()=>{
   return(
     <Container>
       <Project/>
-      <Modal/>
     </Container>
   )
 }
