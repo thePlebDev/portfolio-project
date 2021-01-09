@@ -5,18 +5,7 @@ import useHoverHook from '../../Hooks/UseHoverHook';
 
 import Modal from '../Modal'
 
-const ProjectContainer = styled.div`
-  width:60%;
-  margin:90px auto;
-  grid-gap:40px;
-  display:grid;
-  justify-content:center;
-  grid-template-columns:repeat(auto-fit,160px);
-  overflow:hidden;
-  border:1px solid red;
-  padding:40px;
 
-`
 
 const Image = styled.img`
   width:160px;
@@ -52,20 +41,18 @@ const Title = styled.div`
 
 
 
-const Project =()=>{
+const Project =({title,info,tech,github})=>{
   const [show,setShow] = useState(false)
   const node = useRef(null)
   const {state} = useHoverHook(node)
 
   return(
     <>
-    <ProjectContainer>
       <ImageContainer ref={node}>
       <Title state={state} onClick={()=>setShow(true)}>View Info</Title>
         <Image src={dogSpotter}  state={state}/>
       </ImageContainer>
-    </ProjectContainer>
-    <Modal state={show} setShow={setShow}/>
+    <Modal state={show} setShow={setShow} title={title} info={info} tech={tech} github={github}/>
     </>
   )
 }

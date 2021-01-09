@@ -72,17 +72,23 @@ const Close = styled.div`
   justify-content:center;
   cursor:pointer;
 `
+const Link = styled.a`
+  color:white;
+`
 
-const Modal =({state,setShow})=>{
+
+const Modal =({state,setShow,title,info,tech,github})=>{
   return(
 
     <ModalContainer state={state}>
       <ModalSubContainer>
         <div style={{position:'relative'}}>
-            <ModalTitle>Pup Spotter</ModalTitle>
-            <Description>Dog spotting platform</Description>
-            <Tech>React / Node / Express / Mongo </Tech>
-            <CodeButton>View Code</CodeButton>
+            <ModalTitle>{title}</ModalTitle>
+            <Description>{info}</Description>
+            <Tech>{tech}</Tech>
+            <CodeButton>
+              <Link href={github} target="_blank" rel="noopener noreferrer">View Code</Link>
+            </CodeButton>
             <Close onClick={()=>setShow(false)}> <CloseIcon style={{color:'#e31b6d',fontSize:'40px'}}/></Close>
         </div>
       </ModalSubContainer>
