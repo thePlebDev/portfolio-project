@@ -6,6 +6,8 @@ import Project from '../Projects';
 
 import {allData,frontendData,fullStackData} from '../../Assets/Data/projectData.js';
 
+import './index.css';
+
 
 
 const Container = styled.div`
@@ -72,18 +74,17 @@ const ProjectsPage =()=>{
       <Filter2 state={state} onClick={()=>setState(fullStackData)}>Full Stack</Filter2>
       <Filter3 state={state} onClick={()=>setState(frontendData)}>Frontend</Filter3>
     </FilterContainer>
-      <ProjectContainer>
-        {
-          state.map((item)=>{
-            return(
-                      <Project id={item.id} image={item.image}
-                          title={item.title} github={item.github}
-                          info={item.info} tech={item.tech}/>
-                  )
-          })
-        }
-
-      </ProjectContainer>
+        <ProjectContainer>
+          {
+            state.map((item)=>{
+              return(
+                        <Project id={item.id} image={item.image}
+                            title={item.title} github={item.github}
+                            info={item.info} tech={item.tech}/>
+                    )
+            })
+          }
+        </ProjectContainer>
     </Container>
   )
 }
