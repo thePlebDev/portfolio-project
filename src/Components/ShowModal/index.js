@@ -6,7 +6,6 @@ const ShowModal =({state})=>{
 
   return(
     <div>
-        <Modal state={state} />
     </div>
   )
 }
