@@ -41,7 +41,7 @@ const Title = styled.div`
 
 
 
-const Project =({title,info,tech,github})=>{
+const Project =({title,info,tech,github,image})=>{
   const [show,setShow] = useState(false)
   const node = useRef(null)
   const {state} = useHoverHook(node)
@@ -50,7 +50,7 @@ const Project =({title,info,tech,github})=>{
     <>
       <ImageContainer ref={node}>
       <Title state={state} onClick={()=>setShow(true)}>View Info</Title>
-        <Image src={dogSpotter}  state={state}/>
+        <Image src={image}  state={state}/>
       </ImageContainer>
     <Modal state={show} setShow={setShow} title={title} info={info} tech={tech} github={github}/>
     </>
