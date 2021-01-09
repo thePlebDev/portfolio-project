@@ -1,9 +1,11 @@
 import React,{useState,useEffect,useRef} from 'react';
 import styled from 'styled-components'
+import {CSSTransition,TransitionGroup} from 'react-transition-group';
 
 import Project from '../Projects';
 
-import {allData,frontendData,fullStackData} from '../../Assets/Data/projectData.js'
+import {allData,frontendData,fullStackData} from '../../Assets/Data/projectData.js';
+
 
 
 const Container = styled.div`
@@ -31,15 +33,32 @@ const FilterContainer = styled.div`
     display:flex;
     justify-content:space-between;
 `
-
 const Filter = styled.div`
-  font-size:1.6em;
-  font-weight:400;
-  padding:3px 9px;
-  text-transform:uppercase;
-  border-bottom:1px solid;
-  cursor:pointer;
+font-size:1.6em;
+font-weight:400;
+padding:3px 12px;
+text-transform:uppercase;
+border-radius:5px;
+cursor:pointer;
+transition:all 0.35s;
 `
+
+
+const Filter1 = styled(Filter)`
+
+  color:${({state})=>state === allData ?'white':''};
+  background-color:${({state})=>state === allData ?'#e31b6d':''};
+`
+const Filter2 = styled(Filter)`
+  color:${({state})=>state === fullStackData   ?'white':''};
+  background-color:${({state})=>state === fullStackData ?'#e31b6d':''};
+`
+
+const Filter3 = styled(Filter)`
+  color:${({state})=>state === frontendData   ?'white':''};
+  background-color:${({state})=>state === frontendData ?'#e31b6d':''};
+`
+
 
 
 const ProjectsPage =()=>{
@@ -49,16 +68,18 @@ const ProjectsPage =()=>{
   return(
     <Container>
     <FilterContainer>
-      <Filter onClick={()=>setState(allData)}>All</Filter>
-      <Filter onClick={()=>setState(fullStackData)}>Full Stack</Filter>
-      <Filter onClick={()=>setState(frontendData)}>Frontend</Filter>
+      <Filter1 state={state} onClick={()=>setState(allData)}>All</Filter1>
+      <Filter2 state={state} onClick={()=>setState(fullStackData)}>Full Stack</Filter2>
+      <Filter3 state={state} onClick={()=>setState(frontendData)}>Frontend</Filter3>
     </FilterContainer>
       <ProjectContainer>
         {
           state.map((item)=>{
-            return <Project id={item.id} image={item.image}
-                       title={item.title} github={item.github}
-                       info={item.info} tech={item.tech}/>
+            return(
+                      <Project id={item.id} image={item.image}
+                          title={item.title} github={item.github}
+                          info={item.info} tech={item.tech}/>
+                  )
           })
         }
 
