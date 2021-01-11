@@ -5,8 +5,6 @@ import useHoverHook from '../../Hooks/UseHoverHook';
 
 import Modal from '../Modal'
 
-
-
 const Image = styled.img`
   width:160px;
   height:170px;

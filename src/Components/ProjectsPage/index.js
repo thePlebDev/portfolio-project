@@ -35,6 +35,7 @@ const FilterContainer = styled.div`
     display:flex;
     justify-content:space-between;
 `
+
 const Filter = styled.div`
 font-size:1.6em;
 font-weight:400;
@@ -43,36 +44,21 @@ text-transform:uppercase;
 border-radius:5px;
 cursor:pointer;
 transition:all 0.35s;
+
+color:${({state,data})=>state === data ?'white':''};
+background-color:${({state,data})=>state === data ?'#e31b6d':''};
 `
 
-
-const Filter1 = styled(Filter)`
-
-  color:${({state})=>state === allData ?'white':''};
-  background-color:${({state})=>state === allData ?'#e31b6d':''};
-`
-const Filter2 = styled(Filter)`
-  color:${({state})=>state === fullStackData   ?'white':''};
-  background-color:${({state})=>state === fullStackData ?'#e31b6d':''};
-`
-
-const Filter3 = styled(Filter)`
-  color:${({state})=>state === frontendData   ?'white':''};
-  background-color:${({state})=>state === frontendData ?'#e31b6d':''};
-`
-
-
-
-const ProjectsPage =()=>{
-  const [state,setState] = useState(allData)
+const ProjectsPage =({all=allData, front=frontendData,full=fullStackData})=>{
+  const [state,setState] = useState(all)
 
 
   return(
     <Container>
     <FilterContainer>
-      <Filter1 state={state} onClick={()=>setState(allData)}>All</Filter1>
-      <Filter2 state={state} onClick={()=>setState(fullStackData)}>Full Stack</Filter2>
-      <Filter3 state={state} onClick={()=>setState(frontendData)}>Frontend</Filter3>
+      <Filter state={state} data={all} onClick={()=>setState(all)}>All</Filter>
+      <Filter state={state} data={full} onClick={()=>setState(fullStackData)}>Full Stack</Filter>
+      <Filter state={state} data={front} onClick={()=>setState(frontendData)}>Frontend</Filter>
     </FilterContainer>
         <ProjectContainer>
           {
