@@ -33,7 +33,7 @@ describe('testing the home components',()=>{
     userEvent.click(toggle)
     expect(mockFunc1.mock.calls.length).toBe(1)
     expect(mockFunc2.mock.calls.length).toBe(1)
-    //expect(mockFunc1.mock.calls.length).toEqual(1)
+
   })
 
 })
