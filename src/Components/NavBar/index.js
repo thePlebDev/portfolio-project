@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
+
+import sessionStorage from '../../utils/WindowSessions'
 import PropTypes from 'prop-types'
 
 import YouTubeIcon from '@material-ui/icons/YouTube';
@@ -74,18 +76,9 @@ border-radius:10%;
 
 `
 
-const NavBar =({setShow,setTheme,theme})=>{
+const NavBar =({setShow,setTheme,theme,themeGrabber=sessionStorage.themeSetter})=>{
 
-  const themeSetter = ()=>{
-    setTheme(!theme)
-    let data = sessionStorage.getItem('theme');
-    if(!data){
-      sessionStorage.setItem('theme','dark')
 
-    }else{
-      sessionStorage.removeItem('theme')
-    }
-  }
 
 
   return(
@@ -116,7 +109,7 @@ const NavBar =({setShow,setTheme,theme})=>{
             </div>
 
               <Switch htmlFor="theme">
-                <Checkbox id="theme" type="checkbox" onClick={()=>{themeSetter()}}/>
+                <Checkbox id="theme" type="checkbox" data-testid="theme-slider" onClick={()=>{themeGrabber(theme,setTheme)}}/>
                 <Slider state={theme}></Slider>
               </Switch>
 

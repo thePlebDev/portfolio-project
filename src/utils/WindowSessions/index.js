@@ -9,6 +9,16 @@ const sessionUtils =(function(){
       }else{
         return false
       }
+    },
+    themeSetter(theme,setTheme){
+      setTheme(!theme)
+      let data = sessionStorage.getItem('theme');
+      if(!data){
+        sessionStorage.setItem('theme','dark')
+
+      }else{
+        sessionStorage.removeItem('theme')
+      }
     }
   }
 }())

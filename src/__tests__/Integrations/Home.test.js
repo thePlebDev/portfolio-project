@@ -1,15 +1,35 @@
 import React from 'react';
 import {render} from "@testing-library/react";
-import Home from '../../Components/Home'
+import userEvent from '@testing-library/user-event'
 
+
+import NavBar from '../../Components/NavBar'
+
+
+const mockFunc1 = jest.fn()
+const mockFunc2 = jest.fn()
+
+Object.defineProperty(window,"sessionStorage",{
+  value:{
+    getItem:mockFunc1,
+    setItem:mockFunc2
+  }
+})
 
 describe('testing the home components',()=>{
   it('should test the ui upon render',()=>{
-    //const {getByTestId,getByText} = render(<Home />);
-    const {asFragment} = render(<Home />);
+    const {asFragment} = render(<NavBar />);
     expect(asFragment()).toMatchSnapshot();
 
-    //now I need to find the button, trigger it and then check the snapshot again
 
+  });
+
+  it('should test the ui change',()=>{
+    const {getByTestId} = render(<NavBar/>);
+    let toggle = getByTestId('theme-slider')
+    userEvent.click(toggle)
+    expect(mockFunc1.mock.calls.length).toBe(1)
+    //expect(mockFunc1.mock.calls.length).toEqual(1)
   })
+
 })
