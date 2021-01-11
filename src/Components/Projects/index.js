@@ -48,7 +48,7 @@ const Project =({title,info,tech,github,image})=>{
     <>
       <ImageContainer ref={node}>
       <Title state={state} onClick={()=>setShow(true)}>View Info</Title>
-        <Image src={image}  state={state}/>
+        <Image src={image}  state={state} alt={info}/>
       </ImageContainer>
     <Modal state={show} setShow={setShow} title={title} info={info} tech={tech} github={github}/>
     </>

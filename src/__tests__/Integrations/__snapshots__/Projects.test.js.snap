@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the projects page should render properly  1`] = `
+<DocumentFragment>
+  <div
+    class="sc-kEqYlL daqxOp"
+  >
+    <div
+      class="sc-crzoUp jMQprb"
+    >
+      <div
+        class="sc-dIsAE hUNgcj"
+        data="[object Object],[object Object]"
+      >
+        All
+      </div>
+      <div
+        class="sc-dIsAE KTHCI"
+        data="[object Object]"
+      >
+        Full Stack
+      </div>
+      <div
+        class="sc-dIsAE KTHCI"
+        data="[object Object]"
+      >
+        Frontend
+      </div>
+    </div>
+    <div
+      class="sc-iqAbSa iKllDX"
+    >
+      <div
+        class="sc-pNWxx SIicR"
+      >
+        <div
+          class="sc-jrsJCI iLcdVW"
+        >
+          View Info
+        </div>
+        <img
+          alt="Dog spotting platform"
+          class="sc-fujyUd fHImwe"
+          src="pupFinderPortFolio.png"
+        />
+      </div>
+      <div
+        class="sc-bdnylx dszVzf"
+      >
+        <div
+          class="sc-gtssRu bUwczj"
+        >
+          <div
+            style="position: relative;"
+          >
+            <div
+              class="sc-dlnjPT eoEyIn"
+            >
+              Pup Spotter
+            </div>
+            <div
+              class="sc-hKFyIo hFZjWB"
+            >
+              Dog spotting platform
+            </div>
+            <div
+              class="sc-eCApGN jznTut"
+            >
+              React / Node / Express / Mongo
+            </div>
+            <button
+              class="sc-jSFkmK Vlhvk"
+            >
+              <a
+                class="sc-iCoHVE laxfsI"
+                href="https://github.com/thePlebDev/pupSpotter"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                View Code
+              </a>
+            </button>
+            <div
+              class="sc-gKAblj dKMEDP"
+            >
+               
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                style="color: rgb(227, 27, 109); font-size: 40px;"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-pNWxx SIicR"
+      >
+        <div
+          class="sc-jrsJCI iLcdVW"
+        >
+          View Info
+        </div>
+        <img
+          alt="Portfolio Page"
+          class="sc-fujyUd fHImwe"
+          src="portfolioHome.png"
+        />
+      </div>
+      <div
+        class="sc-bdnylx dszVzf"
+      >
+        <div
+          class="sc-gtssRu bUwczj"
+        >
+          <div
+            style="position: relative;"
+          >
+            <div
+              class="sc-dlnjPT eoEyIn"
+            >
+              Personal
+            </div>
+            <div
+              class="sc-hKFyIo hFZjWB"
+            >
+              Portfolio Page
+            </div>
+            <div
+              class="sc-eCApGN jznTut"
+            >
+              React / React Testing Library
+            </div>
+            <button
+              class="sc-jSFkmK Vlhvk"
+            >
+              <a
+                class="sc-iCoHVE laxfsI"
+                href="https://github.com/thePlebDev/portfolio-project"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                View Code
+              </a>
+            </button>
+            <div
+              class="sc-gKAblj dKMEDP"
+            >
+               
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                style="color: rgb(227, 27, 109); font-size: 40px;"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

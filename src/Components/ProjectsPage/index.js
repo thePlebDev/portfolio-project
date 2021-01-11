@@ -57,14 +57,14 @@ const ProjectsPage =({all=allData, front=frontendData,full=fullStackData})=>{
     <Container>
     <FilterContainer>
       <Filter state={state} data={all} onClick={()=>setState(all)}>All</Filter>
-      <Filter state={state} data={full} onClick={()=>setState(fullStackData)}>Full Stack</Filter>
-      <Filter state={state} data={front} onClick={()=>setState(frontendData)}>Frontend</Filter>
+      <Filter state={state} data={full} onClick={()=>setState(full)}>Full Stack</Filter>
+      <Filter state={state} data={front} onClick={()=>setState(front)}>Frontend</Filter>
     </FilterContainer>
         <ProjectContainer>
           {
             state.map((item)=>{
               return(
-                        <Project id={item.id} image={item.image}
+                        <Project key={item.id} id={item.id} image={item.image}
                             title={item.title} github={item.github}
                             info={item.info} tech={item.tech}/>
                     )
