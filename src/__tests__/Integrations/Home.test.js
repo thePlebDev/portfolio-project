@@ -25,10 +25,14 @@ describe('testing the home components',()=>{
   });
 
   it('should test the ui change',()=>{
-    const {getByTestId} = render(<NavBar/>);
+    const theme = true;
+    const setTheme = jest.fn()
+    const {getByTestId} = render(<NavBar theme={theme} setTheme={setTheme}/>);
+
     let toggle = getByTestId('theme-slider')
     userEvent.click(toggle)
     expect(mockFunc1.mock.calls.length).toBe(1)
+    expect(mockFunc2.mock.calls.length).toBe(1)
     //expect(mockFunc1.mock.calls.length).toEqual(1)
   })
 

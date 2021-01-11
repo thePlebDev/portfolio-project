@@ -3,17 +3,17 @@
 exports[`testing the home components should test the ui upon render 1`] = `
 <DocumentFragment>
   <div
-    class="sc-dIvqjp hLcnmX"
+    class="sc-bdnylx iXTdbG"
   >
     <div
-      class="sc-hHEjAm jaqisr"
+      class="sc-gtssRu bISKfQ"
     >
       <h2>
         Tristan Elliott
       </h2>
     </div>
     <div
-      class="sc-dlMBXb exGJyY"
+      class="sc-dlnjPT goQgTt"
     >
       <a
         data-testid="link"
@@ -22,7 +22,7 @@ exports[`testing the home components should test the ui upon render 1`] = `
         target="_blank"
       >
         <span
-          class="sc-kfYqjs jumAtR"
+          class="sc-hKFyIo bfKmnD"
         >
           <svg
             aria-hidden="true"
@@ -44,7 +44,7 @@ exports[`testing the home components should test the ui upon render 1`] = `
         target="_blank"
       >
         <span
-          class="sc-kfYqjs jumAtR"
+          class="sc-hKFyIo bfKmnD"
         >
           <svg
             aria-hidden="true"
@@ -66,7 +66,7 @@ exports[`testing the home components should test the ui upon render 1`] = `
         target="_blank"
       >
         <span
-          class="sc-kfYqjs jumAtR"
+          class="sc-hKFyIo bfKmnD"
         >
           <svg
             aria-hidden="true"
@@ -83,7 +83,7 @@ exports[`testing the home components should test the ui upon render 1`] = `
       </a>
       <div>
         <span
-          class="sc-kfYqjs jumAtR"
+          class="sc-hKFyIo bfKmnD"
         >
           <svg
             aria-hidden="true"
@@ -100,17 +100,17 @@ exports[`testing the home components should test the ui upon render 1`] = `
         </span>
       </div>
       <label
-        class="sc-fKgIGh iyneAj"
+        class="sc-eCApGN gMeOSt"
         for="theme"
       >
         <input
-          class="sc-bCwgka eNKQZi"
+          class="sc-jSFkmK hccYeD"
           data-testid="theme-slider"
           id="theme"
           type="checkbox"
         />
         <span
-          class="sc-iwaifL jkAlAa"
+          class="sc-gKAblj kaxGAf"
         />
       </label>
     </div>

@@ -80,7 +80,6 @@ const NavBar =({setShow,setTheme,theme,themeGrabber=sessionStorage.themeSetter})
 
 
 
-
   return(
     <Container>
         <Text>
