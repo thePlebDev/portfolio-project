@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 import sessionStorage from '../../utils/WindowSessions'
 import PropTypes from 'prop-types'
 
-import YouTubeIcon from '@material-ui/icons/YouTube';
+
 import TwitterIcon from '@material-ui/icons/Twitter';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import SearchIcon from '@material-ui/icons/Search';
+
 
 //import useLoading from '../../Hooks/useLoadingAnimation'
 
@@ -86,11 +86,7 @@ const NavBar =({setShow,setTheme,theme,themeGrabber=sessionStorage.themeSetter})
             <h2>Tristan Elliott</h2>
         </Text>
         <IconContainer>
-          <a href="https://www.youtube.com/channel/UCc9o1zG46k4voqOT7C6Ankw" data-testid="link" target="_blank" rel="noreferrer noopener">
-            <IconStyle>
-              <YouTubeIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
-            </IconStyle>
-          </a>
+
             <a href="https://twitter.com/Tristanthewebd1" target="_blank" data-testid="link" rel="noreferrer noopener">
               <IconStyle>
                 <TwitterIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
@@ -101,11 +97,7 @@ const NavBar =({setShow,setTheme,theme,themeGrabber=sessionStorage.themeSetter})
                 <GitHubIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}}/>
               </IconStyle>
             </a>
-            <div>
-              <IconStyle>
-                <SearchIcon style={{fontSize:'30px',padding:'10px',cursor:'pointer'}} data-testid="search" onClick={()=>setShow(true)}/>
-              </IconStyle>
-            </div>
+            
 
               <Switch htmlFor="theme">
                 <Checkbox id="theme" type="checkbox" data-testid="theme-slider" onClick={()=>{themeGrabber(theme,setTheme)}}/>
