@@ -75,9 +75,13 @@ const Close = styled.div`
 const Link = styled.a`
   color:white;
 `
+const CodeButton2 = styled(CodeButton)`
+  right:15px;
+`
 
 
-const Modal =({state,setShow,title,info,tech,github})=>{
+
+const Modal =({state,setShow,title,info,tech,github,liveSite})=>{
   return(
 
     <ModalContainer state={state}>
@@ -86,9 +90,23 @@ const Modal =({state,setShow,title,info,tech,github})=>{
             <ModalTitle>{title}</ModalTitle>
             <Description>{info}</Description>
             <Tech>{tech}</Tech>
+
             <CodeButton>
               <Link href={github} target="_blank" rel="noopener noreferrer">View Code</Link>
             </CodeButton>
+
+            {
+              liveSite
+                ?
+                <CodeButton2>
+                  Live Site
+                </CodeButton2>
+                :
+                <div>not here</div>
+            }
+
+
+
             <Close onClick={()=>setShow(false)}> <CloseIcon style={{color:'#e31b6d',fontSize:'40px'}}/></Close>
         </div>
       </ModalSubContainer>

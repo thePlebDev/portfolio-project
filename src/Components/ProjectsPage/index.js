@@ -66,7 +66,7 @@ const ProjectsPage =({all=allData, front=frontendData,full=fullStackData})=>{
               return(
                         <Project key={item.id} id={item.id} image={item.image}
                             title={item.title} github={item.github}
-                            info={item.info} tech={item.tech}/>
+                            info={item.info} tech={item.tech} liveSite={item.liveSite}/>
                     )
             })
           }

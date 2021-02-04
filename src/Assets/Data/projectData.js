@@ -1,5 +1,6 @@
 import dogSpotter from '../pupFinderPortFolio.png';
 import portfolioHome from '../portfolioHome.png';
+import farmersMarket from '../farmersMarketClone.png'
 
 const allData =[
   {
@@ -17,6 +18,15 @@ const allData =[
     github:'https://github.com/thePlebDev/portfolio-project',
     image:portfolioHome,
     id:1
+  },
+  {
+    title:"Online Farmers Market",
+    info:'frontend clone of ecommerce',
+    tech:'React / Redux',
+    github:'https://github.com/thePlebDev/Farmers-Canada-clone',
+    image:farmersMarket,
+    liveSite:'https://farmer-markets.herokuapp.com/',
+    id:2
   }
 ]
 
@@ -28,6 +38,15 @@ const frontendData = [
     github:'https://github.com/thePlebDev/portfolio-project',
     image:portfolioHome,
     id:1
+  },
+  {
+    title:"Online Farmers Market",
+    info:'frontend clone of ecommerce',
+    tech:'React / Redux',
+    github:'https://github.com/thePlebDev/Farmers-Canada-clone',
+    liveSite:'https://farmer-markets.herokuapp.com/',
+    image:farmersMarket,
+    id:2
   }
 ]
 
