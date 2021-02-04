@@ -24,7 +24,7 @@ const LandingPage =({useHookCall=useLoading})=>{
     <div >
       <Landing />
       <Name state={show} data-testid="name">Tristan Elliott</Name>
-      <Title state={show} data-testid="title">Full stack web developer</Title>
+      <Title state={show} data-testid="title">Frontend web developer</Title>
       <About state={show} data-testid="about">
         Living in New Brunswick, Canada. Connect with me on
         <a href="https://twitter.com/Tristanthewebd1" target="_blank" rel="noreferrer noopener">
